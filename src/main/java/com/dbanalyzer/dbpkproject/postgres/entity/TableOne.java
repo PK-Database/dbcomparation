@@ -1,20 +1,32 @@
 package com.dbanalyzer.dbpkproject.postgres.entity;
 
-import lombok.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "USER", schema = "public")
+@Table(name = "TABLE_ONE", schema = "public")
 @AllArgsConstructor
 @Getter
 @Builder
 @NoArgsConstructor
-public class User {
+public class TableOne {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String surname;
+
+    private Integer severity;
+
+    private String startTime;
+
+    private String endTime;
+
+    private String startLatitude;
+
+    private String startLongitude;
 }

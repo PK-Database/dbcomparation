@@ -6,9 +6,11 @@ import org.springframework.boot.autoconfigure.mongo.MongoClientSettingsBuilderCu
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-@Configuration
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+@Configuration
 @Import({MainConfiguration.class})
+@EnableMongoRepositories(basePackages = {"com.dbanalyzer.dbpkproject.mongo.repository"})
 public class MongoDbConfiguration {
 
     @Bean

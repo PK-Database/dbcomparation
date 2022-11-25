@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 
 @AllArgsConstructor
-public class PostgresThread extends Thread{
+public class ThreadForTasks extends Thread{
 
     private final Runnable task;
 

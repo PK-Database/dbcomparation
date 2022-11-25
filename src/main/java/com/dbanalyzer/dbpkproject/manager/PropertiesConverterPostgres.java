@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @Component
 @Slf4j
-public class PropertiesConverter {
+public class PropertiesConverterPostgres {
 
     private final PostgresRepositoryFactory postgresRepositoryFactory;
 
     public void convertAndSave(MasterObject masterObject, Class cls){
-        log.info("Saving " + masterObject.getCity() + " to db");
+        log.info("POSTGRES:::::Saving " + masterObject.getCity() + " to db");
         switch (cls.getName()){
             case "com.dbanalyzer.dbpkproject.postgres.entity.TableOne":
                 postgresRepositoryFactory.getRepository(cls).save(convertTableOne(masterObject));
@@ -48,7 +48,7 @@ public class PropertiesConverter {
 
     }
 
-    public TableOne convertTableOne(MasterObject masterObject) {
+    public TableOne convertTableOne (MasterObject masterObject) {
 
         return TableOne.builder()
                 .endTime(masterObject.getEndTime())

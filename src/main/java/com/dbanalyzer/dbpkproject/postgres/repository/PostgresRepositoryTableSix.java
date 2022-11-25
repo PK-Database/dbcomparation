@@ -1,2 +1,9 @@
-package com.dbanalyzer.dbpkproject.postgres.repository;public interface PostrgesRepositoryTableSix {
+package com.dbanalyzer.dbpkproject.postgres.repository;
+
+import com.dbanalyzer.dbpkproject.postgres.entity.TableSix;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface PostgresRepositoryTableSix extends JpaRepository<TableSix, Long> {
 }

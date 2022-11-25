@@ -1,31 +1,35 @@
-package com.dbanalyzer.dbpkproject.mongo.entity;
+package com.dbanalyzer.dbpkproject.cassandra.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.cassandra.core.mapping.Column;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 
-import javax.persistence.*;
+import javax.persistence.Table;
+import java.util.UUID;
 
 
 @AllArgsConstructor
 @Getter
 @Builder
 @NoArgsConstructor
-@Document("TABLE_FOUR")
+@Table
 public class TableFour {
 
-    @Id
-    private String id;
-
+    @PrimaryKeyColumn
+    @Builder.Default
+    private UUID id = UUID.randomUUID();
+    @Column
     private String country;
-
+    @Column
     private String state;
-
+    @Column
     private String timeZone;
-
+    @Column
     private String airportCode;
-
+    @Column
     private String weatherTimestamp;
 }

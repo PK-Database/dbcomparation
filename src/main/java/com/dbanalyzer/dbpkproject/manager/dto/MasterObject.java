@@ -1,45 +1,44 @@
 package com.dbanalyzer.dbpkproject.manager.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Getter;
+import lombok.ToString;
 
-import java.math.BigDecimal;
-import java.util.Date;
 
 @RequiredArgsConstructor
 @Builder
 @Getter
 @AllArgsConstructor
+@ToString
 public class MasterObject {
 
-    @JsonProperty("ID")
+    @JsonProperty("XX")
     private String id;
     @JsonProperty("Severity")
-    private Date severity;
+    private Integer severity;
     @JsonProperty("Start_Time")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date startTime;
+    private String startTime;
     @JsonProperty("End_Time")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date endTime;
+    private String endTime;
     @JsonProperty("Start_Lat")
-    private BigDecimal startLatitude;
+    private String startLatitude;
     @JsonProperty("Start_Lng")
-    private BigDecimal startLongitude;
+    private String startLongitude;
+
     @JsonProperty("End_Lat")
-    private BigDecimal endLatitude;
+    private String endLatitude;
     @JsonProperty("End_Lng")
-    private BigDecimal endLongitude;
+    private String endLongitude;
     @JsonProperty("Distance(mi)")
-    private BigDecimal distance;
+    private String distance;
     @JsonProperty("Description")
     private String description;
     @JsonProperty("Number")
     private String number;
+
     @JsonProperty("Street")
     private String street;
     @JsonProperty("Side")
@@ -50,6 +49,7 @@ public class MasterObject {
     private String county;
     @JsonProperty("Zipcode")
     private String zipCode;
+
     @JsonProperty("Country")
     private String country;
     @JsonProperty("State")
@@ -59,24 +59,10 @@ public class MasterObject {
     @JsonProperty("Airport_Code")
     private String airportCode;
     @JsonProperty("Weather_Timestamp")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date weatherTimestamp;
-    @JsonProperty("Temperature(F)")
-    private BigDecimal temperature;
-    @JsonProperty("Wind_Chill(F)")
-    private BigDecimal windChill;
-    @JsonProperty("Humidity(%)")
-    private BigDecimal humidity;
-    @JsonProperty("Pressure(in)")
-    private BigDecimal pressure;
-    @JsonProperty("Visibility(mi)")
-    private BigDecimal visibility;
+    private String weatherTimestamp;
+
     @JsonProperty("Wind_Direction")
     private String windDirection;
-    @JsonProperty("Wind_Speed(mph)")
-    private BigDecimal windSpeed;
-    @JsonProperty("Precipitation(in)")
-    private BigDecimal precipitation;
     @JsonProperty("Weather_Condition")
     private String weatherCondition;
     @JsonProperty("Amenity")
@@ -85,6 +71,7 @@ public class MasterObject {
     private Boolean bump;
     @JsonProperty("Crossing")
     private Boolean crossing;
+
     @JsonProperty("Give_Way")
     private Boolean giveWay;
     @JsonProperty("Junction")
@@ -95,6 +82,7 @@ public class MasterObject {
     private Boolean railway;
     @JsonProperty("Roundabout")
     private Boolean roundabout;
+
     @JsonProperty("Station")
     private Boolean station;
     @JsonProperty("Stop")
@@ -105,6 +93,7 @@ public class MasterObject {
     private Boolean trafficSignal;
     @JsonProperty("Turning_Loop")
     private Boolean turningLoop;
+
     @JsonProperty("Sunrise_Sunset")
     private String sunriseSunset;
     @JsonProperty("Civil_Twilight")

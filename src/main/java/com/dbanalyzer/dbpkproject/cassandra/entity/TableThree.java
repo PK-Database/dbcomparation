@@ -1,31 +1,35 @@
-package com.dbanalyzer.dbpkproject.mongo.entity;
+package com.dbanalyzer.dbpkproject.cassandra.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.cassandra.core.mapping.Column;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 
-import javax.persistence.*;
+import javax.persistence.Table;
+import java.util.UUID;
 
 
 @AllArgsConstructor
 @Getter
 @Builder
 @NoArgsConstructor
-@Document("TABLE_THREE")
+@Table
 public class TableThree {
 
-    @Id
-    private String id;
-
+    @PrimaryKeyColumn
+    @Builder.Default
+    private UUID id = UUID.randomUUID();
+    @Column
     private String street;
-
+    @Column
     private String side;
-
+    @Column
     private String city;
-
+    @Column
     private String county;
-
+    @Column
     private String zipCode;
 }

@@ -1,6 +1,9 @@
 package com.dbanalyzer.dbpkproject.controllers.dto;
 
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Builder

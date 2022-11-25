@@ -1,24 +1,22 @@
-package com.dbanalyzer.dbpkproject.postgres.entity;
+package com.dbanalyzer.dbpkproject.mongo.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "TABLE_ONE", schema = "public")
 @AllArgsConstructor
 @Getter
 @Builder
 @NoArgsConstructor
+@Document("TABLE_ONE")
 public class TableOne {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     private Integer severity;
 
