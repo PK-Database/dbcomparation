@@ -1,6 +1,6 @@
 package com.dbanalyzer.dbpkproject.controllers;
 
-import com.dbanalyzer.dbpkproject.controllers.dto.RequestDbResultsDto;
+import com.dbanalyzer.dbpkproject.controllers.enums.DatabaseType;
 import com.dbanalyzer.dbpkproject.manager.DatabaseManager;
 import com.dbanalyzer.dbpkproject.manager.DatabaseUploadManager;
 import lombok.RequiredArgsConstructor;
@@ -23,8 +23,8 @@ public class PerformDbActionController {
     private final DatabaseUploadManager databaseUploadManager;
 
     @PostMapping("/query")
-    public ResponseEntity<?> getResultsForQuery(@RequestBody RequestDbResultsDto requestDbResultsDto){
-        return ResponseEntity.ok().body(databaseManager.specifyDatabaseService(requestDbResultsDto).getAccidents());
+    public ResponseEntity<?> getResultsForQuery(@RequestBody DatabaseType databaseType){
+        return ResponseEntity.ok().body(databaseManager.specifyDatabaseService(databaseType).getAccidents());
     }
 
     @PostMapping(value = "/upload")

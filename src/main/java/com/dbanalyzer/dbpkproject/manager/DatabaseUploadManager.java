@@ -1,8 +1,9 @@
 package com.dbanalyzer.dbpkproject.manager;
 
-import com.dbanalyzer.dbpkproject.manager.dto.AccidentDto;
-import com.dbanalyzer.dbpkproject.mapper.PostgresMapper;
-import com.dbanalyzer.dbpkproject.postgres.services.PostgresService;
+import com.dbanalyzer.dbpkproject.csv.CsvFileToObjectConverter;
+import com.dbanalyzer.dbpkproject.csv.dto.AccidentDto;
+import com.dbanalyzer.dbpkproject.csv.mapper.PostgresMapper;
+import com.dbanalyzer.dbpkproject.database.postgres.services.PostgresService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -26,7 +27,9 @@ public class DatabaseUploadManager {
 
         List<AccidentDto> dtos = csvFileToObjectConverter.convertAccidents(csvFile);
         postgresService.save(postgresMapper.mapToEntitiesList(dtos));
-//        mongoService.save(postgresMapper.mapToEntities(dtos));
+
+        //TODO::
+        // mongoService.save(postgresMapper.mapToEntities(dtos));
 
     }
 }

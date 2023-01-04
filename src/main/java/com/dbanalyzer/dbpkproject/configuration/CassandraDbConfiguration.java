@@ -2,6 +2,7 @@ package com.dbanalyzer.dbpkproject.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
@@ -12,13 +13,15 @@ import org.springframework.data.cassandra.core.CassandraTemplate;
 import org.springframework.data.cassandra.core.mapping.BasicCassandraMappingContext;
 import org.springframework.data.cassandra.core.mapping.CassandraMappingContext;
 import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Objects;
 
 @Configuration
 @EnableCassandraRepositories(
-        basePackages = {"com.dbanalyzer.dbpkproject.cassandra.repository"})
-@Import({MainConfiguration.class})
+        basePackages = {"com.dbanalyzer.dbpkproject.database.cassandra.repository"})
+@ComponentScan(basePackages = "com.dbanalyzer.dbpkproject")
+@EnableTransactionManagement
 public class CassandraDbConfiguration extends AbstractCassandraConfiguration {
 
     @Value("${spring.cassandra.namespace}")

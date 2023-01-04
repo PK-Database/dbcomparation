@@ -1,8 +1,8 @@
 package com.dbanalyzer.dbpkproject.manager;
 
-import com.dbanalyzer.dbpkproject.controllers.dto.RequestDbResultsDto;
-import com.dbanalyzer.dbpkproject.mongo.services.DatabaseServiceMongo;
-import com.dbanalyzer.dbpkproject.postgres.services.PostgresService;
+import com.dbanalyzer.dbpkproject.controllers.enums.DatabaseType;
+import com.dbanalyzer.dbpkproject.database.mongo.services.DatabaseServiceMongo;
+import com.dbanalyzer.dbpkproject.database.postgres.services.PostgresService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -13,8 +13,8 @@ public class DatabaseManager {
     private final DatabaseServiceMongo databaseServiceMongo;
     private final PostgresService postgresService;
 
-    public DataBaseService specifyDatabaseService(RequestDbResultsDto requestDbResultsDto) {
-        switch (requestDbResultsDto.getDatabaseType()) {
+    public DataBaseService specifyDatabaseService(DatabaseType databaseType) {
+        switch (databaseType) {
             case MONGODB:
                 return databaseServiceMongo;
             case POSTGRESQL:
@@ -23,6 +23,5 @@ public class DatabaseManager {
                 throw new IllegalStateException("elo");
         }
     }
-
 
 }
