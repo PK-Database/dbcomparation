@@ -20,6 +20,12 @@ public class AccidentDto {
     @JsonProperty("Severity")
     private Integer severity;
 
+    @JsonProperty("Distance(mi)")
+    private String distance;
+
+    @JsonProperty("Description")
+    private String description;
+
     @JsonProperty("Start_Time")
     @JsonPropertyDescription("Shows end time of the accident in local time zone. End time here refers to when the impact of accident on traffic flow was dismissed.")
     @JsonFormat(pattern = "dd.MM.yyyy HH:mm")
@@ -32,12 +38,6 @@ public class AccidentDto {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     private LocalDateTime endTime;
-
-    @JsonProperty("Distance(mi)")
-    private String distance;
-
-    @JsonProperty("Description")
-    private String description;
 
     @JsonUnwrapped
     private LocationDto location;

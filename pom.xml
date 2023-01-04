@@ -87,6 +87,16 @@
 			<artifactId>jmapper-core</artifactId>
 			<version>1.6.1.CR2</version>
 		</dependency>
+			<dependency>
+				<groupId>com.amazonaws</groupId>
+				<artifactId>aws-java-sdk-dynamodb</artifactId>
+				<version>1.11.64</version>
+			</dependency>
+		<dependency>
+			<groupId>io.github.boostchicken</groupId>
+			<artifactId>spring-data-dynamodb</artifactId>
+			<version>5.2.5</version>
+		</dependency>
 	</dependencies>
 
 	<build>
