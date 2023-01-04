@@ -1,10 +1,8 @@
 package com.dbanalyzer.dbpkproject.controllers;
 
 import com.dbanalyzer.dbpkproject.controllers.dto.RequestDbResultsDto;
-import com.dbanalyzer.dbpkproject.manager.CsvFileToObjectConverter;
 import com.dbanalyzer.dbpkproject.manager.DatabaseManager;
 import com.dbanalyzer.dbpkproject.manager.DatabaseUploadManager;
-import com.dbanalyzer.dbpkproject.manager.dto.MasterObject;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -26,7 +24,7 @@ public class PerformDbActionController {
 
     @PostMapping("/query")
     public ResponseEntity<?> getResultsForQuery(@RequestBody RequestDbResultsDto requestDbResultsDto){
-        return ResponseEntity.ok().body(databaseManager.specifyDatabaseService(requestDbResultsDto).getUsers());
+        return ResponseEntity.ok().body(databaseManager.specifyDatabaseService(requestDbResultsDto).getAccidents());
     }
 
     @PostMapping(value = "/upload")

@@ -1,10 +1,10 @@
 package com.dbanalyzer.dbpkproject.manager;
 
-import com.dbanalyzer.dbpkproject.controllers.dto.UserDto;
+import com.dbanalyzer.dbpkproject.manager.dto.AccidentDto;
 
 import java.util.Collection;
 
 public interface DataBaseService {
 
-    Collection<UserDto> getUsers();
+    Collection<AccidentDto> getAccidents();
 }

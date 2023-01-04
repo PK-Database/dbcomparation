@@ -1,7 +1,7 @@
 package com.dbanalyzer.dbpkproject.mongo.services;
 
-import com.dbanalyzer.dbpkproject.controllers.dto.UserDto;
 import com.dbanalyzer.dbpkproject.manager.DataBaseService;
+import com.dbanalyzer.dbpkproject.manager.dto.AccidentDto;
 import com.dbanalyzer.dbpkproject.mongo.repository.MongoRepositoryTableOne;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -19,8 +18,8 @@ public class DatabaseServiceMongo implements DataBaseService {
     private final MongoRepositoryTableOne mongoExampleRepo;
 
 
-    @Override
-    public Collection<UserDto> getUsers() {
+
+    public Collection<AccidentDto> getAccidents() {
         return Collections.emptyList();
     }
 

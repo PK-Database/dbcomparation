@@ -1,6 +1,6 @@
 package com.dbanalyzer.dbpkproject.manager;
 
-import com.dbanalyzer.dbpkproject.manager.dto.MasterObject;
+import com.dbanalyzer.dbpkproject.manager.dto.AccidentDto;
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
@@ -21,23 +21,16 @@ import java.util.List;
 @Slf4j
 public class CsvFileToObjectConverter {
 
-    public <T> List<MasterObject> generateMasterObjectCollection(Class<T> type, MultipartFile multipartFile) throws IOException {
-
-        List<MasterObject> masterObjects = new ArrayList<>();
-
+    public List<AccidentDto> convertAccidents(MultipartFile multipartFile) throws IOException {
         CsvSchema csvSchema = CsvSchema.emptySchema().withHeader().withColumnSeparator(';');
+        ObjectReader mapper = new CsvMapper().readerFor(AccidentDto.class).with(csvSchema);
+        MappingIterator<AccidentDto> iterator = mapper.readValues(new BufferedReader(new InputStreamReader(multipartFile.getInputStream())));
 
-        ObjectReader mapper = new CsvMapper().readerFor(MasterObject.class).with(csvSchema);
-
-        MappingIterator<MasterObject> iterator = mapper.readValues(new BufferedReader(new InputStreamReader(multipartFile.getInputStream())));
-
-        int i = 1;
-        while(iterator.hasNext()){
-            MasterObject masterObject = iterator.next();
-            masterObjects.add(masterObject);
-            log.info(i + " :::::" + masterObject.getCity() + " " + masterObject.getDescription());
-            i++;
+        List<AccidentDto> accidentDtos = new ArrayList<>();
+        while (iterator.hasNext()) {
+            AccidentDto accidentDto = iterator.next();
+            accidentDtos.add(accidentDto);
         }
-        return masterObjects;
+        return accidentDtos;
     }
 }
