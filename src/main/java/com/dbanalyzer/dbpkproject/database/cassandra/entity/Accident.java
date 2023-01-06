@@ -1,6 +1,5 @@
 package com.dbanalyzer.dbpkproject.database.cassandra.entity;
 
-import com.googlecode.jmapper.annotations.JMap;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +8,9 @@ import org.springframework.data.cassandra.core.mapping.Frozen;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 
 import org.springframework.data.cassandra.core.mapping.Table;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import java.time.LocalDateTime;
 
 @Table

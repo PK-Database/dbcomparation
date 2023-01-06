@@ -15,7 +15,6 @@ import java.util.List;
 public class CassandraService implements DataBaseService {
     private final ICassandraAccidentRepository accidentRepository;
     private final CassandraMapper cassandraMapper;
-
     @Autowired
     public CassandraService(ICassandraAccidentRepository accidentRepository,
                             CassandraMapper cassandraMapper) {

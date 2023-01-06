@@ -8,14 +8,14 @@ import lombok.Setter;
 
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
-@Table
+import org.springframework.data.cassandra.core.mapping.UserDefinedType;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@UserDefinedType
 public class StartGeoPoint {
-
-    @PrimaryKey
     private Float latitude;
     private Float longitude;
 
