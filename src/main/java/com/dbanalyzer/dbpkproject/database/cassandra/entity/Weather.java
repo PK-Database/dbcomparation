@@ -1,6 +1,5 @@
 package com.dbanalyzer.dbpkproject.database.cassandra.entity;
 
-import com.googlecode.jmapper.annotations.JMap;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,14 +12,9 @@ import org.springframework.data.cassandra.core.mapping.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Weather {
-
     @PrimaryKey
-    private String accidentId;
-    @JMap("weatherTimestamp")
     private String weatherTimestamp;
-    @JMap("windDirection")
     private String windDirection;
-    @JMap("weatherCondition")
     private String weatherCondition;
 
 }

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.cassandra.core.mapping.Frozen;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 
 import org.springframework.data.cassandra.core.mapping.Table;
@@ -16,18 +17,17 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Accident {
-
-    @JMap("id")
     @PrimaryKey
     private String id;
-    @JMap("severity")
     private Integer severity;
-    @JMap("distance")
     private String distance;
-    @JMap("description")
     private String description;
-    @JMap("startTime")
     private LocalDateTime startTime;
-    @JMap("endTime")
     private LocalDateTime endTime;
+    @Frozen
+    private Location location;
+    @Frozen
+    private Weather weather;
+    @Frozen
+    private RoadDetails roadDetails;
 }
