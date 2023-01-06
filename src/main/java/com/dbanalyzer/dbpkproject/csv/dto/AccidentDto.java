@@ -6,10 +6,14 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.googlecode.jmapper.annotations.JGlobalMap;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
+@Builder(toBuilder = true)
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @JGlobalMap(excluded = "id")
 @JsonIgnoreProperties(ignoreUnknown = true)

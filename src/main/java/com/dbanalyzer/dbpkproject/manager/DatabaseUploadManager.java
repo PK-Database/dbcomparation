@@ -4,6 +4,7 @@ import com.dbanalyzer.dbpkproject.csv.CsvFileToObjectConverter;
 import com.dbanalyzer.dbpkproject.csv.dto.AccidentDto;
 import com.dbanalyzer.dbpkproject.csv.mapper.DynamoMapper;
 import com.dbanalyzer.dbpkproject.csv.mapper.PostgresMapper;
+import com.dbanalyzer.dbpkproject.database.cassandra.services.CassandraService;
 import com.dbanalyzer.dbpkproject.database.dynamo.service.DynamoService;
 import com.dbanalyzer.dbpkproject.database.postgres.services.PostgresService;
 import org.springframework.stereotype.Component;
@@ -20,14 +21,16 @@ public class DatabaseUploadManager {
     private final DynamoMapper dynamoMapper;
     private final PostgresService postgresService;
     private final DynamoService dynamoService;
+    private final CassandraService cassandraService;
 
 
-    public DatabaseUploadManager(CsvFileToObjectConverter csvFileToObjectConverter, PostgresMapper postgresMapper, DynamoMapper dynamoMapper, PostgresService postgresService, DynamoService dynamoService) {
+    public DatabaseUploadManager(CsvFileToObjectConverter csvFileToObjectConverter, PostgresMapper postgresMapper, DynamoMapper dynamoMapper, PostgresService postgresService, DynamoService dynamoService, CassandraService cassandraService) {
         this.csvFileToObjectConverter = csvFileToObjectConverter;
         this.postgresMapper = postgresMapper;
         this.dynamoMapper = dynamoMapper;
         this.postgresService = postgresService;
         this.dynamoService = dynamoService;
+        this.cassandraService = cassandraService;
     }
 
     public void performDatabasesUploads(MultipartFile csvFile) throws IOException {
@@ -35,7 +38,7 @@ public class DatabaseUploadManager {
         List<AccidentDto> dtos = csvFileToObjectConverter.convertAccidents(csvFile);
         postgresService.save(postgresMapper.mapToEntitiesList(dtos));
         dynamoService.save(dynamoMapper.mapToEntitiesList(dtos));
-
+        cassandraService.save(dtos);
         //TODO::
         // mongoService.save(postgresMapper.mapToEntities(dtos));
 
