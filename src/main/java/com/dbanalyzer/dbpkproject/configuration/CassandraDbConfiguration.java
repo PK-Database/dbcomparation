@@ -1,10 +1,15 @@
 package com.dbanalyzer.dbpkproject.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
 import org.springframework.data.cassandra.config.SchemaAction;
+import org.springframework.data.cassandra.core.CassandraOperations;
+import org.springframework.data.cassandra.core.CassandraTemplate;
 import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
+
+import java.util.Objects;
 
 @Configuration
 @EnableCassandraRepositories(
@@ -48,8 +53,8 @@ public class CassandraDbConfiguration extends AbstractCassandraConfiguration {
     }
 
 
-/*    @Bean
+    @Bean
     public CassandraOperations cassandraOperations() {
         return new CassandraTemplate(Objects.requireNonNull(cassandraSession().getObject()));
-    }*/
+    }
 }
