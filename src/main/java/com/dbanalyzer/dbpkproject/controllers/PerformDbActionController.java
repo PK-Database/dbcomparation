@@ -2,7 +2,6 @@ package com.dbanalyzer.dbpkproject.controllers;
 
 import com.dbanalyzer.dbpkproject.controllers.enums.DatabaseType;
 import com.dbanalyzer.dbpkproject.manager.DatabaseManager;
-import com.dbanalyzer.dbpkproject.manager.DatabaseUploadManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -20,16 +19,9 @@ import java.io.IOException;
 public class PerformDbActionController {
 
     private final DatabaseManager databaseManager;
-    private final DatabaseUploadManager databaseUploadManager;
 
     @PostMapping("/query")
     public ResponseEntity<?> getResultsForQuery(@RequestBody DatabaseType databaseType){
-        return ResponseEntity.ok().body(databaseManager.specifyDatabaseService(databaseType).getAccidents());
-    }
-
-    @PostMapping(value = "/upload")
-    public ResponseEntity<?> uploadCsvRowsToDatabase(@RequestPart("file") MultipartFile csvFile) throws IOException {
-        databaseUploadManager.performDatabasesUploads(csvFile);
-        return ResponseEntity.ok().body("ok");
+        return ResponseEntity.ok().body(databaseManager.specifyDatabaseService(databaseType).getMovies());
     }
 }
