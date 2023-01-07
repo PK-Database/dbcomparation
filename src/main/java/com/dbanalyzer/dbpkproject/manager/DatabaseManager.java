@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class DatabaseManager {
 
-    private final DatabaseServiceMongo databaseServiceMongo;
     private final PostgresService postgresService;
 
     private final DynamoService dynamoService;
@@ -20,8 +19,6 @@ public class DatabaseManager {
 
     public DataBaseService specifyDatabaseService(DatabaseType databaseType) {
         switch (databaseType) {
-            case MONGODB:
-                return databaseServiceMongo;
             case POSTGRESQL:
                 return postgresService;
             case DYNAMODB:
