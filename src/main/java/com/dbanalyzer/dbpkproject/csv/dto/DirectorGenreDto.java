@@ -1,8 +1,12 @@
 package com.dbanalyzer.dbpkproject.csv.dto;
 
 import com.googlecode.jmapper.annotations.JGlobalMap;
-import lombok.Data;
+import lombok.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Data
 @JGlobalMap
 public class DirectorGenreDto {
@@ -10,5 +14,4 @@ public class DirectorGenreDto {
     private Long directorId;
     private String genre;
     private Float prob;
-
 }

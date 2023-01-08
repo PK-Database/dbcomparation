@@ -1,0 +1,32 @@
+[
+  {
+    "id" : 1,
+    "name" : "#7 Train: An Immigrant Journey, The",
+    "year" : 2000,
+    "rank": 9.8,
+    "movieGenres" : {
+      "movieId" : 1,
+      "genre" : "Documentary"
+    },
+    "actors": [
+      {
+        "id" : 1,
+        "firstName" : "Chono",
+        "lastName" : "Takiyama",
+        "gender": "M"
+      }
+    ],
+    "directors" : [
+      {
+        "id" : 1,
+        "firstName" : "J.T.",
+        "lastName" : "Takagi",
+        "directorGenre" : {
+          "directorId" : 1,
+          "genre" : "Documentary",
+          "prob" : 1.0
+        }
+      }
+    ]
+  }
+]

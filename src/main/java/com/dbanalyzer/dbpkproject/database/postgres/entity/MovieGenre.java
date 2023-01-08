@@ -1,5 +1,6 @@
 package com.dbanalyzer.dbpkproject.database.postgres.entity;
 
+import com.googlecode.jmapper.annotations.JMap;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,11 +11,11 @@ import javax.persistence.*;
 public class MovieGenre {
 
     @Id
-    private Long id;
-
     @Column(name = "movie_id")
+    @JMap
     private Long movieId;
 
+    @JMap
     private String genre;
 
 }

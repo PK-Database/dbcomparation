@@ -24,9 +24,9 @@ public class DynamoService implements DataBaseService {
     public List<Movie> getAll() {
         return movieRepository.findAll();
     }
-
-    public void save(List<Movie> movies) {
-        movieRepository.saveAll(movies);
+    @Override
+    public void save(List<MovieDto> movies) {
+        movieRepository.saveAll(dynamoMapper.mapToEntitiesList(movies));
     }
 
     @Override

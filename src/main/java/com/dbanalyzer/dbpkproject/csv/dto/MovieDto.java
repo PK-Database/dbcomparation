@@ -1,10 +1,14 @@
 package com.dbanalyzer.dbpkproject.csv.dto;
 
 import com.googlecode.jmapper.annotations.JGlobalMap;
-import lombok.Data;
+import com.googlecode.jmapper.annotations.JMap;
+import lombok.*;
 
 import java.util.List;
-
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Data
 @JGlobalMap
 public class MovieDto {
@@ -13,11 +17,8 @@ public class MovieDto {
     private String name;
     private Integer year;
     private Float rank;
-
-    private List<MovieGenreDto> movieGenres;
-
+    private MovieGenreDto movieGenres;
     private List<DirectorDto> directors;
-
-    private List<RoleDto> roles;
+    private List<ActorDto> actors;
 
 }
