@@ -25,10 +25,10 @@ public class Movie {
     @JMap
     private Float rank;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "movie_id")
     @JMap
-    private MovieGenre movieGenres;
+    private Set<MovieGenre> movieGenres;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(

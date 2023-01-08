@@ -30,7 +30,7 @@ public class Movie {
 
     @JMap
     @Frozen
-    private MovieGenre movieGenres;
+    private Set<MovieGenre> movieGenres;
 
     @JMap
     @Frozen

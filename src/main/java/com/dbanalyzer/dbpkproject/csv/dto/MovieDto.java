@@ -16,7 +16,7 @@ public class MovieDto {
     private String name;
     private Integer year;
     private Float rank;
-    private MovieGenreDto movieGenres;
+    private List<MovieGenreDto> movieGenres;
     private List<DirectorDto> directors;
     private List<ActorDto> actors;
 }

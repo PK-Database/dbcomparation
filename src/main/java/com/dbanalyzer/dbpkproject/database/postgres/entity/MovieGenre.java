@@ -4,17 +4,20 @@ import com.googlecode.jmapper.annotations.JMap;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @Entity
 @Table(name = "movies_genres")
-public class MovieGenre {
+@IdClass(MovieGenre.class)
+public class MovieGenre implements Serializable {
 
     @Id
     @Column(name = "movie_id")
     @JMap
     private Long movieId;
 
+    @Id
     @JMap
     private String genre;
 

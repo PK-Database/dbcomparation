@@ -4,10 +4,16 @@
     "name" : "#7 Train: An Immigrant Journey, The",
     "year" : 2000,
     "rank": 9.8,
-    "movieGenres" : {
-      "movieId" : 1,
-      "genre" : "Documentary"
-    },
+    "movieGenres" : [
+      {
+        "movieId": 1,
+        "genre": "Documentary"
+      },
+      {
+        "movieId": 1,
+        "genre": "Sci-i"
+      }
+    ],
     "actors": [
       {
         "id" : 1,
