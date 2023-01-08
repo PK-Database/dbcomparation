@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -23,11 +24,11 @@ public class CassandraService implements DataBaseService {
 
     @Override
     public void save(List<MovieDto> movies) {
-
+        movieRepository.saveAll(cassandraMapper.mapToEntitiesList(movies));
     }
 
     @Override
-    public Collection<MovieDto> getMovies() {
-        return cassandraMapper.mapToDtoList(movieRepository.findAll());
+    public Collection<Object> getMovies() {
+        return Collections.singleton(cassandraMapper.mapToDtoList(movieRepository.findAll()));
     }
 }

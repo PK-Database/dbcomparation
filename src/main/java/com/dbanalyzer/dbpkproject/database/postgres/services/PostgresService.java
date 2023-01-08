@@ -12,6 +12,7 @@ import com.dbanalyzer.dbpkproject.manager.DataBaseService;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,8 +53,8 @@ public class PostgresService implements DataBaseService {
     }
 
     @Override
-    public Collection<MovieDto> getMovies() {
-        return postgresMapper.mapToDtoList(movieRepository.findAll());
+    public Collection<Object> getMovies() {
+        return Collections.singleton(postgresMapper.mapToDtoList(movieRepository.findAll()));
     }
 
     public List<MovieDto> findAllMovies() {

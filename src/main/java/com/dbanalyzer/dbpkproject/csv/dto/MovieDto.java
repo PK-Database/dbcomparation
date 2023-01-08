@@ -1,7 +1,6 @@
 package com.dbanalyzer.dbpkproject.csv.dto;
 
 import com.googlecode.jmapper.annotations.JGlobalMap;
-import com.googlecode.jmapper.annotations.JMap;
 import lombok.*;
 
 import java.util.List;
@@ -20,5 +19,4 @@ public class MovieDto {
     private MovieGenreDto movieGenres;
     private List<DirectorDto> directors;
     private List<ActorDto> actors;
-
 }

@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface DataBaseService {
     void save(List<MovieDto> movies);
-    Collection<MovieDto> getMovies();
+    Collection<Object> getMovies();
 
 }

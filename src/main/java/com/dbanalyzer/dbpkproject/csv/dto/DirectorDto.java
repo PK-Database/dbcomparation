@@ -1,7 +1,5 @@
 package com.dbanalyzer.dbpkproject.csv.dto;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.googlecode.jmapper.annotations.JGlobalMap;
 import lombok.*;
 
@@ -19,5 +17,4 @@ public class DirectorDto {
     private String lastName;
     private DirectorGenreDto directorGenre;
     private Collection<MovieDto> movies;
-
 }

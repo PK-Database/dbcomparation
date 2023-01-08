@@ -1,7 +1,10 @@
 package com.dbanalyzer.dbpkproject.database.cassandra.usertypes;
 
-import lombok.*;
-import org.springframework.data.cassandra.core.mapping.Column;
+import com.googlecode.jmapper.annotations.JMap;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 
 @Getter
@@ -11,7 +14,8 @@ import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 @UserDefinedType
 public class MovieGenre {
 
-    @Column("movie_id")
+    @JMap
     private Long movieId;
+    @JMap
     private String genre;
 }

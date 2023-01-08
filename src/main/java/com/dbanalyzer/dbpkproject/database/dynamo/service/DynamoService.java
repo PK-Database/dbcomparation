@@ -30,7 +30,7 @@ public class DynamoService implements DataBaseService {
     }
 
     @Override
-    public Collection<MovieDto> getMovies() {
+    public Collection<Object> getMovies() {
         return null;
     }
 }
