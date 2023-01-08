@@ -1,7 +1,7 @@
 package com.dbanalyzer.dbpkproject.csv.mapper;
 
 import com.dbanalyzer.dbpkproject.csv.dto.MovieDto;
-import com.dbanalyzer.dbpkproject.database.postgres.entity.Movie;
+import com.dbanalyzer.dbpkproject.database.dynamo.entity.Movie;
 import com.googlecode.jmapper.JMapper;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +10,7 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 
 @Component
-public class PostgresMapper {
+public class DynamoMapper {
 
     public List<Movie> mapToEntitiesList(List<MovieDto> dtos) {
         JMapper<Movie, MovieDto> movieMapper = new JMapper<>

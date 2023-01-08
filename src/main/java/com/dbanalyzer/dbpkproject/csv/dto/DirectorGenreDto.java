@@ -1,19 +1,14 @@
 package com.dbanalyzer.dbpkproject.csv.dto;
 
-import lombok.*;
+import com.googlecode.jmapper.annotations.JGlobalMap;
+import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Builder(toBuilder = true)
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
+@JGlobalMap
 public class DirectorGenreDto {
 
     private Long directorId;
     private String genre;
     private Float prob;
+
 }

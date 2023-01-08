@@ -1,25 +1,20 @@
 package com.dbanalyzer.dbpkproject.database.postgres.entity;
 
-import lombok.*;
+import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Entity
-@Table(name = "movie_genres")
+@Table(name = "movies_genres")
 public class MovieGenre {
 
     @Id
+    private Long id;
+
     @Column(name = "movie_id")
     private Long movieId;
 
-    @Column
     private String genre;
+
 }

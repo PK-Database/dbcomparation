@@ -1,14 +1,9 @@
 package com.dbanalyzer.dbpkproject.database.postgres.entity;
 
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Collection;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "directors")
@@ -27,10 +22,11 @@ public class Director {
     @JoinColumn(name = "id")
     private DirectorGenre directorGenre;
 
-    @ManyToMany
-    @JoinTable(
-            name = "movies_directors",
-            joinColumns = @JoinColumn(name = "director_id"),
-            inverseJoinColumns = @JoinColumn(name = "movie_id"))
-    private Collection<Movie> movies;
+//    @ManyToMany
+//    @JoinTable(
+//            name = "movies_directors",
+//            joinColumns = @JoinColumn(name = "director_id"),
+//            inverseJoinColumns = @JoinColumn(name = "movie_id"))
+//    private Collection<Movie> movies;
+
 }
