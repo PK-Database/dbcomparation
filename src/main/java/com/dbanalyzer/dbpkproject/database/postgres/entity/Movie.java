@@ -1,14 +1,10 @@
 package com.dbanalyzer.dbpkproject.database.postgres.entity;
 
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.Set;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "movies")
@@ -17,26 +13,24 @@ public class Movie {
     @Id
     private Long id;
 
-    @Column
     private String name;
-
-    @Column
     private Integer year;
-
-    @Column
     private Float rank;
 
-    @OneToOne
-    @JoinColumn(name = "id")
-    private MovieGenre movieGenre;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "movie_id")
+    private Set<MovieGenre> movieGenres;
 
-    @OneToMany(mappedBy = "movie")
-    private Collection<Role> roles;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "movie_id")
+    private Set<Role> roles;
 
-    @ManyToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "movies_directors",
             joinColumns = @JoinColumn(name = "movie_id"),
-            inverseJoinColumns = @JoinColumn(name = "director_id"))
-    private Collection<Director> directors;
+            inverseJoinColumns = @JoinColumn(name = "director_id")
+    )
+    private Set<Director> directors;
+
 }

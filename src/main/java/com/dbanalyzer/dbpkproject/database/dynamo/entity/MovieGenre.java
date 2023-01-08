@@ -5,10 +5,9 @@ import lombok.Data;
 
 @Data
 @DynamoDBDocument
-public class Weather {
+public class MovieGenre {
 
-    private String weatherTimestamp;
-    private String windDirection;
-    private String weatherCondition;
+    private Long movieId;
+    private String genre;
 
 }

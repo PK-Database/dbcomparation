@@ -3,11 +3,15 @@ package com.dbanalyzer.dbpkproject.database.dynamo.entity;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import lombok.Data;
 
+import java.util.Collection;
+
 @Data
 @DynamoDBDocument
-public class StartGeoPoint {
+public class Actor {
 
-    private Float latitude;
-    private Float longitude;
+    private String firstName;
+    private String lastName;
+    private String gender;
+    private Collection<Role> roles;
 
 }

@@ -1,21 +1,23 @@
 package com.dbanalyzer.dbpkproject.csv.dto;
 
-import lombok.*;
+import com.googlecode.jmapper.annotations.JGlobalMap;
+import lombok.Data;
 
-import javax.persistence.*;
-import java.util.Collection;
+import java.util.List;
 
-@Builder(toBuilder = true)
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
+@JGlobalMap
 public class MovieDto {
 
     private Long id;
     private String name;
     private Integer year;
     private Float rank;
-    private MovieGenreDto movieGenre;
-    private Collection<RoleDto> roles;
-    private Collection<DirectorDto> directors;
+
+    private List<MovieGenreDto> movieGenres;
+
+    private List<DirectorDto> directors;
+
+    private List<RoleDto> roles;
+
 }

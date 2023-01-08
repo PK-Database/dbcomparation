@@ -41,5 +41,4 @@ public class DynamoDBConfig {
                 amazonAWSAccessKey, amazonAWSSecretKey);
     }
 
-
 }

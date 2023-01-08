@@ -1,18 +1,17 @@
 package com.dbanalyzer.dbpkproject.database.postgres.entity;
 
-import lombok.*;
+import lombok.Data;
 
-import javax.persistence.*;
-import java.util.Collection;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "actors")
 public class Actor {
+
     @Id
     private Long id;
 
@@ -25,6 +24,7 @@ public class Actor {
     @Column(name = "gender")
     private String gender;
 
-    @OneToMany(mappedBy = "actor")
-    private Collection<Role> roles;
+//    @OneToMany(mappedBy = "actor")
+//    private Collection<Role> roles;
+
 }

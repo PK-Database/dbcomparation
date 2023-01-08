@@ -5,9 +5,11 @@ import lombok.Data;
 
 @Data
 @DynamoDBDocument
-public class EndGeoPoint {
+public class Role {
 
-    private Float latitude;
-    private Float longitude;
+    private Role id;
+    private Actor actor;
+    private Movie movie;
+    private String role;
 
 }

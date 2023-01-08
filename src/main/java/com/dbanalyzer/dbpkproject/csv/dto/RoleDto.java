@@ -1,18 +1,15 @@
 package com.dbanalyzer.dbpkproject.csv.dto;
 
-import com.dbanalyzer.dbpkproject.database.postgres.entity.RoleKey;
-import lombok.*;
+import com.googlecode.jmapper.annotations.JGlobalMap;
+import lombok.Data;
 
-import javax.persistence.*;
-
-@Builder(toBuilder = true)
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
+@JGlobalMap
 public class RoleDto {
 
-    private RoleKey id;
+    private Long id;
     private ActorDto actor;
-    private MovieDto movie;
+    //    private MovieDto movie;
     private String role;
+
 }

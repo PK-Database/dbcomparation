@@ -1,19 +1,16 @@
 package com.dbanalyzer.dbpkproject.csv.dto;
 
-import lombok.*;
+import com.googlecode.jmapper.annotations.JGlobalMap;
+import lombok.Data;
 
-import javax.persistence.*;
-import java.util.Collection;
-
-@Builder(toBuilder = true)
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
+@JGlobalMap
 public class ActorDto {
 
     private Long id;
     private String firstName;
     private String lastName;
     private String gender;
-    private Collection<RoleDto> roles;
+//    private Collection<RoleDto> roles;
+
 }
