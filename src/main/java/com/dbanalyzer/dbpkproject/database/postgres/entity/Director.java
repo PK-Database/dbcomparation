@@ -5,6 +5,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -26,10 +28,10 @@ public class Director {
     @JMap
     private String lastName;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "director_id")
     @JMap
-    private DirectorGenre directorGenre;
+    private Set<DirectorGenre> directorGenres;
 
     @OneToMany
     @JoinTable(

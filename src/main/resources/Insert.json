@@ -27,11 +27,18 @@
         "id" : 1,
         "firstName" : "J.T.",
         "lastName" : "Takagi",
-        "directorGenre" : {
-          "directorId" : 1,
-          "genre" : "Documentary",
-          "prob" : 1.0
-        }
+        "directorGenres" : [
+          {
+            "directorId": 1,
+            "genre": "Documentary",
+            "prob": 1.0
+          },
+          {
+            "directorId": 1,
+            "genre": "Horror",
+            "prob": 1.9
+          }
+        ]
       }
     ]
   }

@@ -4,6 +4,8 @@ import com.googlecode.jmapper.annotations.JMap;
 import lombok.*;
 import org.springframework.data.cassandra.core.mapping.*;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -24,5 +26,5 @@ public class Director {
 
     @JMap
     @Frozen
-    private DirectorGenre directorGenre;
+    private Set<DirectorGenre> directorGenres;
 }

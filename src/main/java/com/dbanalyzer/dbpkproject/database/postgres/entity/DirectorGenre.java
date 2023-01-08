@@ -3,10 +3,9 @@ package com.dbanalyzer.dbpkproject.database.postgres.entity;
 import com.googlecode.jmapper.annotations.JMap;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -14,13 +13,15 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "directors_genres")
-public class DirectorGenre {
+@IdClass(DirectorGenre.class)
+public class DirectorGenre implements Serializable {
 
     @Id
     @Column(name = "director_id")
     @JMap
     private Long directorId;
 
+    @Id
     @Column
     @JMap
     private String genre;
