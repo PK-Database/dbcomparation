@@ -1,5 +1,6 @@
 package com.dbanalyzer.dbpkproject.database.cassandra.services;
 
+import com.dbanalyzer.dbpkproject.controllers.enums.QueryType;
 import com.dbanalyzer.dbpkproject.csv.dto.MovieDto;
 import com.dbanalyzer.dbpkproject.csv.mapper.CassandraMapper;
 import com.dbanalyzer.dbpkproject.database.cassandra.repository.CassandraMovieRepository;
@@ -30,6 +31,12 @@ public class CassandraService implements DataBaseService {
     @Override
     public Collection<MovieDto> getMovies() {
         return cassandraMapper.mapToDtoList(movieRepository.findAll());
+    }
+
+    @Override
+    public Collection<MovieDto> executeQuery(QueryType queryType) {
+        System.out.println("hehe cassandra");
+        return null;
     }
 
 }

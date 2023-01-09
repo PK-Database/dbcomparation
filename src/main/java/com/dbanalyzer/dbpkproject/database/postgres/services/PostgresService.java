@@ -1,5 +1,6 @@
 package com.dbanalyzer.dbpkproject.database.postgres.services;
 
+import com.dbanalyzer.dbpkproject.controllers.enums.QueryType;
 import com.dbanalyzer.dbpkproject.csv.dto.MovieDto;
 import com.dbanalyzer.dbpkproject.csv.mapper.PostgresMapper;
 import com.dbanalyzer.dbpkproject.database.postgres.entity.Movie;
@@ -24,6 +25,12 @@ public class PostgresService implements DataBaseService {
     @Override
     public Collection<MovieDto> getMovies() {
         return postgresMapper.mapToDtoList(movieRepository.findAll());
+    }
+
+    @Override
+    public Collection<MovieDto> executeQuery(QueryType queryType) {
+        System.out.println("hehe postgres");
+        return null;
     }
 
     public void save(List<Movie> movieList) {

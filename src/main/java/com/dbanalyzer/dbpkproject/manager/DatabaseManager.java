@@ -16,16 +16,12 @@ public class DatabaseManager {
     private final CassandraService cassandraService;
 
     public DataBaseService specifyDatabaseService(DatabaseType databaseType) {
-        switch (databaseType) {
-            case POSTGRESQL:
-                return postgresService;
-            case DYNAMODB:
-                return dynamoService;
-            case CASSANDRA:
-                return cassandraService;
-            default:
-                throw new IllegalStateException("elo");
-        }
+        return switch (databaseType) {
+            case POSTGRESQL -> postgresService;
+            case DYNAMODB -> dynamoService;
+            case CASSANDRA -> cassandraService;
+            default -> throw new IllegalStateException("elo");
+        };
     }
 
 }

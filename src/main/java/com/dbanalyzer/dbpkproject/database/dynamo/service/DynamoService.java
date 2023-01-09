@@ -1,5 +1,6 @@
 package com.dbanalyzer.dbpkproject.database.dynamo.service;
 
+import com.dbanalyzer.dbpkproject.controllers.enums.QueryType;
 import com.dbanalyzer.dbpkproject.csv.dto.MovieDto;
 import com.dbanalyzer.dbpkproject.csv.mapper.DynamoMapper;
 import com.dbanalyzer.dbpkproject.database.dynamo.entity.Movie;
@@ -33,6 +34,12 @@ public class DynamoService implements DataBaseService {
     @Override
     public Collection<MovieDto> getMovies() {
         return dynamoMapper.mapToDtoList(movieRepository.findAll());
+    }
+
+    @Override
+    public Collection<MovieDto> executeQuery(QueryType queryType) {
+        System.out.println("hehe dynamo");
+        return null;
     }
 
 }
