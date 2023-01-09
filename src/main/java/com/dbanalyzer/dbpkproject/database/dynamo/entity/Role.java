@@ -7,7 +7,7 @@ import lombok.Data;
 @DynamoDBDocument
 public class Role {
 
-    private Role id;
+    private String id;
     private Actor actor;
     private Movie movie;
     private String role;

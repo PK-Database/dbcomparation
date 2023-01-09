@@ -12,7 +12,7 @@ public class Role {
     @Id
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "actor_id")
     private Actor actor;
 

@@ -26,9 +26,9 @@ public class PostgresService implements DataBaseService {
         return postgresMapper.mapToDtoList(movieRepository.findAll());
     }
 
-    public List<MovieDto> findAllMovies() {
-        List<Movie> entities = movieRepository.findTop10By();
-        return postgresMapper.mapToDtoList(entities);
+    public void save(List<Movie> movieList) {
+        movieRepository.deleteAll();
+        movieRepository.saveAll(movieList);
     }
 
 }

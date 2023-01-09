@@ -7,6 +7,7 @@ import lombok.Data;
 @JGlobalMap
 public class DirectorGenreDto {
 
+    private String id;
     private Long directorId;
     private String genre;
     private Float prob;

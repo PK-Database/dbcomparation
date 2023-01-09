@@ -3,6 +3,7 @@ package com.dbanalyzer.dbpkproject.csv.mapper;
 import com.dbanalyzer.dbpkproject.csv.dto.MovieDto;
 import com.dbanalyzer.dbpkproject.database.postgres.entity.Movie;
 import com.googlecode.jmapper.JMapper;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -29,5 +30,20 @@ public class PostgresMapper {
                 .map(movieMapper::getDestination)
                 .collect(toList());
     }
+
+    public List<MovieDto> mapToDtoListMM(List<Movie> dtos) {
+
+        return dtos.stream()
+                .map(this::mapToDto)
+                .collect(toList());
+    }
+
+    public MovieDto mapToDto(Movie dto) {
+        ModelMapper modelMapper = new ModelMapper();
+        modelMapper.getConfiguration().setAmbiguityIgnored(true);
+
+        return modelMapper.map(dto, MovieDto.class);
+    }
+
 
 }

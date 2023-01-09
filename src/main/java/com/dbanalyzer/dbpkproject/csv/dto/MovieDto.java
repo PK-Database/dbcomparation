@@ -4,6 +4,7 @@ import com.googlecode.jmapper.annotations.JGlobalMap;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @JGlobalMap
@@ -14,7 +15,7 @@ public class MovieDto {
     private Integer year;
     private Float rank;
 
-    private List<MovieGenreDto> movieGenres;
+    private Set<MovieGenreDto> movieGenres;
 
     private List<DirectorDto> directors;
 

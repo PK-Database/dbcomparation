@@ -18,7 +18,7 @@ public class Director {
     @Column(name = "last_name")
     private String lastName;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private DirectorGenre directorGenre;
 

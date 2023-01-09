@@ -7,6 +7,7 @@ import lombok.Data;
 @JGlobalMap
 public class MovieGenreDto {
 
+    private String id;
     private Long movieId;
     private String genre;
 

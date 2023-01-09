@@ -26,6 +26,7 @@ public class DynamoService implements DataBaseService {
     }
 
     public void save(List<Movie> movies) {
+        movieRepository.deleteAll();
         movieRepository.saveAll(movies);
     }
 
@@ -33,4 +34,5 @@ public class DynamoService implements DataBaseService {
     public Collection<MovieDto> getMovies() {
         return null;
     }
+
 }

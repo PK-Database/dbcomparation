@@ -17,15 +17,15 @@ public class Movie {
     private Integer year;
     private Float rank;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "movie_id")
     private Set<MovieGenre> movieGenres;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "movie_id")
     private Set<Role> roles;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "movies_directors",
             joinColumns = @JoinColumn(name = "movie_id"),

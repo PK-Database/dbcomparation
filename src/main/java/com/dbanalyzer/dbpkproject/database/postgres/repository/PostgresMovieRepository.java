@@ -12,6 +12,8 @@ public interface PostgresMovieRepository extends JpaRepository<Movie, Long> {
     List<Movie> findTop100000By();
 
     List<Movie> findTop10By();
+    List<Movie> findTop10000By();
+    List<Movie> findTop1By();
 
     List<Movie> findAll();
 

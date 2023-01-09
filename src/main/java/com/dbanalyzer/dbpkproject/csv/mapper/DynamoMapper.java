@@ -3,6 +3,7 @@ package com.dbanalyzer.dbpkproject.csv.mapper;
 import com.dbanalyzer.dbpkproject.csv.dto.MovieDto;
 import com.dbanalyzer.dbpkproject.database.dynamo.entity.Movie;
 import com.googlecode.jmapper.JMapper;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -19,6 +20,20 @@ public class DynamoMapper {
         return dtos.stream()
                 .map(movieMapper::getDestination)
                 .collect(toList());
+    }
+
+    public List<Movie> mapToEntitiesListMM(List<MovieDto> dtos) {
+
+        return dtos.stream()
+                .map(this::mapToDto)
+                .collect(toList());
+    }
+
+    public Movie mapToDto(MovieDto dto) {
+        ModelMapper modelMapper = new ModelMapper();
+        modelMapper.getConfiguration().setAmbiguityIgnored(true);
+
+        return modelMapper.map(dto, Movie.class);
     }
 
     public List<MovieDto> mapToDtoList(List<Movie> dtos) {

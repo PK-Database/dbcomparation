@@ -7,6 +7,7 @@ import lombok.Data;
 @DynamoDBDocument
 public class MovieGenre {
 
+    private String id;
     private Long movieId;
     private String genre;
 
