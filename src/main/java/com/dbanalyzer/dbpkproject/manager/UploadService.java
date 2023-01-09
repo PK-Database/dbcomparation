@@ -15,8 +15,6 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.dbanalyzer.dbpkproject.controllers.enums.JsonSize.*;
-
 @Component
 public class UploadService {
 
@@ -40,6 +38,8 @@ public class UploadService {
 
     public void performDatabaseUpload(DataBaseService dataBaseService, JsonSize jsonSize) throws IOException {
         List<MovieDto> movieDtoList = loadMoviesFromJson(jsonSize);
+
+        //forTesting
         List<MovieDto> smaller = movieDtoList.stream().limit(100).collect(Collectors.toList());
 
         //TODO::: implement dataBaseService wildcards
@@ -51,29 +51,16 @@ public class UploadService {
         var moviesDynamo = dynamoService.getMovies();
 
         System.out.println("XD");
-
     }
 
     private List<MovieDto> loadMoviesFromJson(JsonSize jsonSize) throws IOException {
-        InputStream is = null;
-        switch (jsonSize) {
-            //100k
-            case HUGE -> is = UploadService.class.getResourceAsStream(JSON_FILE_PATH + HUGE + JSON_PREFIX);
-
-            //50k
-            case BIG -> is = UploadService.class.getResourceAsStream(JSON_FILE_PATH + BIG + JSON_PREFIX);
-
-            //25k
-            case MEDIUM -> is = UploadService.class.getResourceAsStream(JSON_FILE_PATH + MEDIUM + JSON_PREFIX);
-
-            //1k
-            case SMALL -> is = UploadService.class.getResourceAsStream(JSON_FILE_PATH + SMALL + JSON_PREFIX);
-
-            //10
-            case TINY -> is = UploadService.class.getResourceAsStream(JSON_FILE_PATH + TINY + JSON_PREFIX);
-        }
+        InputStream is = loadJson(jsonSize);
         CollectionType msgFromJSON = objectMapper.getTypeFactory().constructCollectionType(List.class, MovieDto.class);
         return objectMapper.readValue(is, msgFromJSON);
+    }
+
+    private InputStream loadJson(JsonSize jsonSize) {
+        return UploadService.class.getResourceAsStream(JSON_FILE_PATH + jsonSize + JSON_PREFIX);
     }
 
 }
