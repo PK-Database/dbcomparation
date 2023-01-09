@@ -11,6 +11,8 @@ import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 @UserDefinedType
 public class DirectorGenre {
 
+    private String id;
+    private Long directorId;
     private String genre;
     private Float prob;
 }

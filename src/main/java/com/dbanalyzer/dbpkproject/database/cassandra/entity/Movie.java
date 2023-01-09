@@ -2,13 +2,12 @@ package com.dbanalyzer.dbpkproject.database.cassandra.entity;
 
 import com.dbanalyzer.dbpkproject.database.cassandra.usertypes.MovieGenre;
 import com.dbanalyzer.dbpkproject.database.cassandra.usertypes.Director;
-import com.dbanalyzer.dbpkproject.database.cassandra.usertypes.RoleActor;
+import com.dbanalyzer.dbpkproject.database.cassandra.usertypes.Role;
 import lombok.*;
 import org.springframework.data.cassandra.core.mapping.Frozen;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-import java.util.Collection;
 import java.util.Set;
 
 @Getter
@@ -25,10 +24,10 @@ public class Movie {
     private Float rank;
 
     @Frozen
-    private MovieGenre movieGenre;
+    private Set<MovieGenre> movieGenres;
 
     @Frozen
-    private Set<RoleActor> roles;
+    private Set<Role> roles;
 
     @Frozen
     private Set<Director> directors;

@@ -25,5 +25,5 @@ public class Movie {
     private MovieGenre movieGenre;
 
     @Frozen
-    private Set<RoleActor> roles;
+    private Set<Role> roles;
 }

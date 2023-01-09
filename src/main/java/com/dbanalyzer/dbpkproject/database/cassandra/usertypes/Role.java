@@ -7,9 +7,10 @@ import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@UserDefinedType("movie_roles")
-public class RoleActor {
+@UserDefinedType("roles")
+public class Role {
 
+    private String id;
     private Actor actor;
     private String role;
 }

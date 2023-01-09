@@ -11,7 +11,7 @@ import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 @UserDefinedType
 public class MovieGenre {
 
-    @Column("movie_id")
+    private String id;
     private Long movieId;
     private String genre;
 }
