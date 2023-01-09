@@ -33,9 +33,9 @@ public class PostgresService implements DataBaseService {
         return null;
     }
 
-    public void save(List<Movie> movieList) {
+    public void saveMovies(List<? extends Object> movieList) {
         movieRepository.deleteAll();
-        movieRepository.saveAll(movieList);
+        movieRepository.saveAll((List<Movie>) movieList);
     }
 
 }

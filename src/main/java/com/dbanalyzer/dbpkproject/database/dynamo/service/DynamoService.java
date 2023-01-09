@@ -26,9 +26,9 @@ public class DynamoService implements DataBaseService {
         return movieRepository.findAll();
     }
 
-    public void save(List<Movie> movies) {
+    public void saveMovies(List<? extends Object> movieList) {
         movieRepository.deleteAll();
-        movieRepository.saveAll(movies);
+        movieRepository.saveAll((List<Movie>) movieList);
     }
 
     @Override

@@ -15,7 +15,6 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class UploadService {
@@ -44,18 +43,17 @@ public class UploadService {
     public void performDatabaseUpload(DataBaseService dataBaseService, JsonSize jsonSize) throws IOException {
         List<MovieDto> movieDtoList = loadMoviesFromJson(jsonSize);
 
-        //forTesting
-        List<MovieDto> smaller = movieDtoList.stream().limit(100).collect(Collectors.toList());
+        switch (dataBaseService) {
+            case DynamoService i -> dataBaseService.saveMovies(dynamoMapper.mapToEntitiesList(movieDtoList));
+            case PostgresService p -> dataBaseService.saveMovies(postgresMapper.mapToEntitiesList(movieDtoList));
+            case CassandraService c -> dataBaseService.saveMovies(cassandraMapper.mapToEntitiesList(movieDtoList));
+            default -> throw new IllegalStateException("Unexpected value: " + dataBaseService);
+        }
 
-        //TODO::: implement dataBaseService wildcards
-        //dataBaseService.save(movieDtoList);
-
-        postgresService.save(postgresMapper.mapToEntitiesList(smaller));
-        dynamoService.save(dynamoMapper.mapToEntitiesList(smaller));
-        cassandraService.save(cassandraMapper.mapToEntitiesList(smaller));
-        var moviesPG = postgresService.getMovies();
+        //for tests
         var moviesDynamo = dynamoService.getMovies();
         var moviesCass = cassandraService.getMovies();
+        var moviesPG = postgresService.getMovies();
 
         System.out.println("XD");
     }
