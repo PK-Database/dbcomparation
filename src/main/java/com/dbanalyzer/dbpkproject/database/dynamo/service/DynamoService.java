@@ -32,7 +32,7 @@ public class DynamoService implements DataBaseService {
 
     @Override
     public Collection<MovieDto> getMovies() {
-        return null;
+        return dynamoMapper.mapToDtoList(movieRepository.findAll());
     }
 
 }

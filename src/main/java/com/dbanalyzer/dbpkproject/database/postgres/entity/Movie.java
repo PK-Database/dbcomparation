@@ -25,11 +25,10 @@ public class Movie {
     @JoinColumn(name = "movie_id")
     private Set<Role> roles;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "movies_directors",
-            joinColumns = @JoinColumn(name = "movie_id"),
-            inverseJoinColumns = @JoinColumn(name = "director_id")
+            joinColumns = @JoinColumn(name = "movie_id")
     )
     private Set<Director> directors;
 

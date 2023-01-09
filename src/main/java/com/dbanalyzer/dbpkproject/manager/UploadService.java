@@ -15,8 +15,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.dbanalyzer.dbpkproject.controllers.enums.JsonSize.HUGE;
-import static com.dbanalyzer.dbpkproject.controllers.enums.JsonSize.TINY;
+import static com.dbanalyzer.dbpkproject.controllers.enums.JsonSize.*;
 
 @Component
 public class UploadService {
@@ -46,8 +45,12 @@ public class UploadService {
         //TODO::: implement dataBaseService wildcards
         //dataBaseService.save(movieDtoList);
 
-//        dynamoService.save(dynamoMapper.mapToEntitiesList(movieDtoList));
         postgresService.save(postgresMapper.mapToEntitiesList(smaller));
+        dynamoService.save(dynamoMapper.mapToEntitiesList(smaller));
+        var moviesPG = postgresService.getMovies();
+        var moviesDynamo = dynamoService.getMovies();
+
+        System.out.println("XD");
 
     }
 
@@ -56,6 +59,15 @@ public class UploadService {
         switch (jsonSize) {
             //100k
             case HUGE -> is = UploadService.class.getResourceAsStream(JSON_FILE_PATH + HUGE + JSON_PREFIX);
+
+            //50k
+            case BIG -> is = UploadService.class.getResourceAsStream(JSON_FILE_PATH + BIG + JSON_PREFIX);
+
+            //25k
+            case MEDIUM -> is = UploadService.class.getResourceAsStream(JSON_FILE_PATH + MEDIUM + JSON_PREFIX);
+
+            //1k
+            case SMALL -> is = UploadService.class.getResourceAsStream(JSON_FILE_PATH + SMALL + JSON_PREFIX);
 
             //10
             case TINY -> is = UploadService.class.getResourceAsStream(JSON_FILE_PATH + TINY + JSON_PREFIX);
