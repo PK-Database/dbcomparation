@@ -29,13 +29,21 @@ public class PostgresService implements DataBaseService {
 
     @Override
     public Collection<MovieDto> executeQuery(QueryType queryType) {
-        System.out.println("hehe postgres");
-        return null;
+        return switch (queryType) {
+            case CREATE -> null;
+            case READ -> null;
+            case UPDATE -> null;
+            case DELETE -> delete();
+        };
     }
 
     public void saveMovies(List<? extends Object> movieList) {
         movieRepository.deleteAll();
         movieRepository.saveAll((List<Movie>) movieList);
+    }
+
+    private List<MovieDto> delete() {
+        return postgresMapper.mapToDtoList(movieRepository.deleteAllByYearBetween(1910, 1950));
     }
 
 }
