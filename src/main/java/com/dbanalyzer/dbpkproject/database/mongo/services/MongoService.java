@@ -32,6 +32,17 @@ public class MongoService implements DataBaseService {
 
     @Override
     public Collection<MovieDto> executeQuery(QueryType queryType) {
-        return null;
+        System.out.println("hehe mongo");
+        return switch (queryType) {
+            case CREATE -> null;
+            case READ -> null;
+            case UPDATE -> null;
+            case DELETE -> delete();
+        };
     }
+
+    private List<MovieDto> delete() {
+        return mongoMapper.mapToDtoList(mongoMovieRepository.deleteAllByYearBetween(1910, 1950));
+    }
+
 }
