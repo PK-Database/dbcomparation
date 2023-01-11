@@ -39,7 +39,16 @@ public class DynamoService implements DataBaseService {
     @Override
     public Collection<MovieDto> executeQuery(QueryType queryType) {
         System.out.println("hehe dynamo");
-        return null;
+        return switch (queryType) {
+            case CREATE -> null;
+            case READ -> null;
+            case UPDATE -> null;
+            case DELETE -> delete();
+        };
+    }
+
+    private List<MovieDto> delete() {
+        return dynamoMapper.mapToDtoList(movieRepository.deleteAllByYearBetween(1910, 1950));
     }
 
 }

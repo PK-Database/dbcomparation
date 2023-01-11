@@ -11,4 +11,7 @@ public interface IDynamoMovieRepository extends CrudRepository<Movie, String> {
 
     List<Movie> findAll();
 
+
+    List<Movie> deleteAllByYearBetween(Integer from, Integer to);
+
 }
