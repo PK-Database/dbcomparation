@@ -9,7 +9,9 @@ import com.dbanalyzer.dbpkproject.manager.DataBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.InputMismatchException;
 import java.util.List;
 
 @Service
@@ -36,8 +38,22 @@ public class CassandraService implements DataBaseService {
 
     @Override
     public Collection<MovieDto> executeQuery(QueryType queryType) {
-        System.out.println("hehe cassandra");
-        return null;
+        return switch (queryType) {
+            case CREATE -> null;
+            case READ -> null;
+            case UPDATE -> null;
+            case DELETE -> delete();
+        };
+    }
+
+    private List<MovieDto> delete() {
+        List<Movie> movies = movieRepository.findAllByYearBetween(1910, 1950);
+        for (Movie movie:movies
+        ) {
+            movieRepository.deleteById(movie.getId());
+        }
+
+        return cassandraMapper.mapToDtoList(movies);
     }
 
 }

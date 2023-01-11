@@ -4,9 +4,7 @@ import com.dbanalyzer.dbpkproject.database.cassandra.usertypes.MovieGenre;
 import com.dbanalyzer.dbpkproject.database.cassandra.usertypes.Director;
 import com.dbanalyzer.dbpkproject.database.cassandra.usertypes.Role;
 import lombok.*;
-import org.springframework.data.cassandra.core.mapping.Frozen;
-import org.springframework.data.cassandra.core.mapping.PrimaryKey;
-import org.springframework.data.cassandra.core.mapping.Table;
+import org.springframework.data.cassandra.core.mapping.*;
 
 import java.util.Set;
 
