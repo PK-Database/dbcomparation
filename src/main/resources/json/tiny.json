@@ -1,0 +1,919 @@
+[ {
+  "id" : 0,
+  "name" : "#28",
+  "year" : 2002,
+  "movieGenres" : [ ],
+  "roles" : [ {
+    "id" : 3008169,
+    "actor" : {
+      "id" : 737235,
+      "firstName" : "Laura",
+      "lastName" : "Niemi",
+      "gender" : "F"
+    },
+    "role" : "#1 Woman"
+  }, {
+    "id" : 675446,
+    "actor" : {
+      "id" : 152409,
+      "firstName" : "Greg",
+      "lastName" : "Fitzpatrick",
+      "gender" : "M"
+    },
+    "role" : "#1 Man"
+  } ],
+  "directors" : [ {
+    "id" : 38057,
+    "firstName" : "Jeff",
+    "lastName" : "Jingle",
+    "directorGenre" : {
+      "id" : 38057,
+      "directorId" : 21786,
+      "genre" : "Crime",
+      "prob" : 0.2
+    }
+  } ]
+}, {
+  "id" : 1,
+  "name" : "#7 Train: An Immigrant Journey, The",
+  "year" : 2000,
+  "movieGenres" : [ {
+    "id" : 1,
+    "movieId" : 1,
+    "genre" : "Documentary"
+  }, {
+    "id" : 2,
+    "movieId" : 1,
+    "genre" : "Short"
+  } ],
+  "roles" : [ ],
+  "directors" : [ {
+    "id" : 77912,
+    "firstName" : "J.T.",
+    "lastName" : "Takagi",
+    "directorGenre" : {
+      "id" : 77912,
+      "directorId" : 44128,
+      "genre" : "Documentary",
+      "prob" : 1.0
+    }
+  }, {
+    "id" : 60728,
+    "firstName" : "Hye Jung",
+    "lastName" : "Park",
+    "directorGenre" : {
+      "id" : 60728,
+      "directorId" : 34554,
+      "genre" : "Thriller",
+      "prob" : 0.6
+    }
+  } ]
+}, {
+  "id" : 2,
+  "name" : "$",
+  "year" : 1971,
+  "rank" : 6.4,
+  "movieGenres" : [ {
+    "id" : 4,
+    "movieId" : 2,
+    "genre" : "Crime"
+  }, {
+    "id" : 3,
+    "movieId" : 2,
+    "genre" : "Comedy"
+  } ],
+  "roles" : [ {
+    "id" : 238703,
+    "actor" : {
+      "id" : 54593,
+      "firstName" : "Scott (I)",
+      "lastName" : "Brady",
+      "gender" : "M"
+    },
+    "role" : "Sarge"
+  }, {
+    "id" : 2051424,
+    "actor" : {
+      "id" : 479960,
+      "firstName" : "Walt",
+      "lastName" : "Trott",
+      "gender" : "M"
+    },
+    "role" : "Stars and Stripes"
+  }, {
+    "id" : 2157821,
+    "actor" : {
+      "id" : 504480,
+      "firstName" : "Robert (I)",
+      "lastName" : "Webber",
+      "gender" : "M"
+    },
+    "role" : "Attorney"
+  }, {
+    "id" : 1949684,
+    "actor" : {
+      "id" : 455570,
+      "firstName" : "Robert",
+      "lastName" : "Stiles",
+      "gender" : "M"
+    },
+    "role" : "Major"
+  }, {
+    "id" : 2360761,
+    "actor" : {
+      "id" : 555892,
+      "firstName" : "Françoise",
+      "lastName" : "Blanc",
+      "gender" : "F"
+    },
+    "role" : "$ stripper"
+  }, {
+    "id" : 2054909,
+    "actor" : {
+      "id" : 480654,
+      "firstName" : "Klaus",
+      "lastName" : "Tschichan",
+      "gender" : "M"
+    },
+    "role" : "Knifeman"
+  }, {
+    "id" : 244438,
+    "actor" : {
+      "id" : 55875,
+      "firstName" : "Arthur",
+      "lastName" : "Brauss",
+      "gender" : "M"
+    },
+    "role" : "Candy Man"
+  }, {
+    "id" : 70189,
+    "actor" : {
+      "id" : 16703,
+      "firstName" : "Darrell (I)",
+      "lastName" : "Armstrong",
+      "gender" : "M"
+    },
+    "role" : "Associated Press"
+  }, {
+    "id" : 715034,
+    "actor" : {
+      "id" : 161139,
+      "firstName" : "Gert",
+      "lastName" : "Fröbe",
+      "gender" : "M"
+    },
+    "role" : "Mr. Kessel"
+  }, {
+    "id" : 1092629,
+    "actor" : {
+      "id" : 246921,
+      "firstName" : "Wolfgang",
+      "lastName" : "Kieling",
+      "gender" : "M"
+    },
+    "role" : "Granich"
+  }, {
+    "id" : 3235522,
+    "actor" : {
+      "id" : 800931,
+      "firstName" : "Monica",
+      "lastName" : "Stender",
+      "gender" : "F"
+    },
+    "role" : "Berta"
+  }, {
+    "id" : 2926124,
+    "actor" : {
+      "id" : 714465,
+      "firstName" : "Christiane",
+      "lastName" : "Maybach",
+      "gender" : "F"
+    },
+    "role" : "Helga"
+  }, {
+    "id" : 912921,
+    "actor" : {
+      "id" : 206526,
+      "firstName" : "Bob",
+      "lastName" : "Herron",
+      "gender" : "M"
+    },
+    "role" : "Bodyguard"
+  }, {
+    "id" : 2695555,
+    "actor" : {
+      "id" : 649263,
+      "firstName" : "Goldie",
+      "lastName" : "Hawn",
+      "gender" : "F"
+    },
+    "role" : "Dawn Divine"
+  }, {
+    "id" : 914590,
+    "actor" : {
+      "id" : 206969,
+      "firstName" : "Horst",
+      "lastName" : "Hesslein",
+      "gender" : "M"
+    },
+    "role" : "Bruno"
+  }, {
+    "id" : 1615973,
+    "actor" : {
+      "id" : 376847,
+      "firstName" : "Tove",
+      "lastName" : "Platon",
+      "gender" : "M"
+    },
+    "role" : "Customs"
+  }, {
+    "id" : 1141225,
+    "actor" : {
+      "id" : 259336,
+      "firstName" : "Wolfgang",
+      "lastName" : "Kuhlman",
+      "gender" : "M"
+    },
+    "role" : "Furcoat"
+  }, {
+    "id" : 2822507,
+    "actor" : {
+      "id" : 685870,
+      "firstName" : "Kirsten",
+      "lastName" : "Lahman",
+      "gender" : "F"
+    },
+    "role" : "Customs"
+  }, {
+    "id" : 141745,
+    "actor" : {
+      "id" : 33054,
+      "firstName" : "Warren",
+      "lastName" : "Beatty",
+      "gender" : "M"
+    },
+    "role" : "Joe Collins"
+  }, {
+    "id" : 971595,
+    "actor" : {
+      "id" : 219385,
+      "firstName" : "Hans (I)",
+      "lastName" : "Hutter",
+      "gender" : "M"
+    },
+    "role" : "Karl"
+  } ],
+  "directors" : [ {
+    "id" : 9970,
+    "firstName" : "Richard (I)",
+    "lastName" : "Brooks",
+    "directorGenre" : {
+      "id" : 9970,
+      "directorId" : 5729,
+      "genre" : "Short",
+      "prob" : 1.0
+    }
+  } ]
+}, {
+  "id" : 3,
+  "name" : "$1,000 Reward",
+  "year" : 1913,
+  "movieGenres" : [ ],
+  "roles" : [ {
+    "id" : 1363326,
+    "actor" : {
+      "id" : 310636,
+      "firstName" : "Morris",
+      "lastName" : "McGee",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 2183140,
+    "actor" : {
+      "id" : 510230,
+      "firstName" : "Crane",
+      "lastName" : "Wilbur",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 2656802,
+    "actor" : {
+      "id" : 638406,
+      "firstName" : "Betty",
+      "lastName" : "Gray",
+      "gender" : "F"
+    },
+    "role" : ""
+  }, {
+    "id" : 160025,
+    "actor" : {
+      "id" : 37145,
+      "firstName" : "Charles (II)",
+      "lastName" : "Bennett",
+      "gender" : "M"
+    },
+    "role" : ""
+  } ],
+  "directors" : [ ]
+}, {
+  "id" : 4,
+  "name" : "$1,000 Reward",
+  "year" : 1915,
+  "movieGenres" : [ ],
+  "roles" : [ {
+    "id" : 2693535,
+    "actor" : {
+      "id" : 648653,
+      "firstName" : "Carey L.",
+      "lastName" : "Hastings",
+      "gender" : "F"
+    },
+    "role" : ""
+  }, {
+    "id" : 2573391,
+    "actor" : {
+      "id" : 615711,
+      "firstName" : "Madeline",
+      "lastName" : "Fairbanks",
+      "gender" : "F"
+    },
+    "role" : ""
+  }, {
+    "id" : 2346956,
+    "actor" : {
+      "id" : 552188,
+      "firstName" : "Minnie",
+      "lastName" : "Berlin",
+      "gender" : "F"
+    },
+    "role" : ""
+  }, {
+    "id" : 2573407,
+    "actor" : {
+      "id" : 615712,
+      "firstName" : "Marion",
+      "lastName" : "Fairbanks",
+      "gender" : "F"
+    },
+    "role" : ""
+  } ],
+  "directors" : [ ]
+}, {
+  "id" : 5,
+  "name" : "$1,000 Reward",
+  "year" : 1923,
+  "movieGenres" : [ {
+    "id" : 5,
+    "movieId" : 5,
+    "genre" : "Western"
+  } ],
+  "roles" : [ {
+    "id" : 2189594,
+    "actor" : {
+      "id" : 511630,
+      "firstName" : "Guinn Big Boy",
+      "lastName" : "Williams",
+      "gender" : "M"
+    },
+    "role" : ""
+  } ],
+  "directors" : [ {
+    "id" : 71885,
+    "firstName" : "Charles R.",
+    "lastName" : "Seeling",
+    "directorGenre" : {
+      "id" : 71885,
+      "directorId" : 40714,
+      "genre" : "Drama",
+      "prob" : 0.428571
+    }
+  } ]
+}, {
+  "id" : 6,
+  "name" : "$1,000,000 Duck",
+  "year" : 1971,
+  "rank" : 5.0,
+  "movieGenres" : [ {
+    "id" : 6,
+    "movieId" : 6,
+    "genre" : "Comedy"
+  }, {
+    "id" : 7,
+    "movieId" : 6,
+    "genre" : "Family"
+  } ],
+  "roles" : [ {
+    "id" : 3324963,
+    "actor" : {
+      "id" : 825638,
+      "firstName" : "Virginia",
+      "lastName" : "Vincent",
+      "gender" : "F"
+    },
+    "role" : "Eunice Hooper"
+  }, {
+    "id" : 1501782,
+    "actor" : {
+      "id" : 350163,
+      "firstName" : "Bryan",
+      "lastName" : "OByrne",
+      "gender" : "M"
+    },
+    "role" : "Bank Teller"
+  }, {
+    "id" : 1036255,
+    "actor" : {
+      "id" : 234110,
+      "firstName" : "Ted",
+      "lastName" : "Jordan",
+      "gender" : "M"
+    },
+    "role" : "Mr. Forbes"
+  }, {
+    "id" : 232397,
+    "actor" : {
+      "id" : 53139,
+      "firstName" : "Billy",
+      "lastName" : "Bowles",
+      "gender" : "M"
+    },
+    "role" : "Orlo Wadlow"
+  }, {
+    "id" : 477554,
+    "actor" : {
+      "id" : 106778,
+      "firstName" : "Jonathon",
+      "lastName" : "Daly",
+      "gender" : "M"
+    },
+    "role" : "Purchasing Agent"
+  }, {
+    "id" : 1859837,
+    "actor" : {
+      "id" : 433639,
+      "firstName" : "Robert",
+      "lastName" : "Shayne",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 767203,
+    "actor" : {
+      "id" : 173490,
+      "firstName" : "Stu",
+      "lastName" : "Gilliam",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 51649,
+    "actor" : {
+      "id" : 12522,
+      "firstName" : "Edward (I)",
+      "lastName" : "Andrews",
+      "gender" : "M"
+    },
+    "role" : "Morgan"
+  }, {
+    "id" : 156415,
+    "actor" : {
+      "id" : 36466,
+      "firstName" : "Jack",
+      "lastName" : "Bender",
+      "gender" : "M"
+    },
+    "role" : "Arvin Wadlow"
+  }, {
+    "id" : 1696262,
+    "actor" : {
+      "id" : 394865,
+      "firstName" : "Pete",
+      "lastName" : "Renaday",
+      "gender" : "M"
+    },
+    "role" : "Mr. Beckert"
+  }, {
+    "id" : 1772350,
+    "actor" : {
+      "id" : 412075,
+      "firstName" : "Bing",
+      "lastName" : "Russell",
+      "gender" : "M"
+    },
+    "role" : "Mr. Smith"
+  }, {
+    "id" : 1900270,
+    "actor" : {
+      "id" : 443848,
+      "firstName" : "Hal",
+      "lastName" : "Smith",
+      "gender" : "M"
+    },
+    "role" : "Courthouse Guard"
+  }, {
+    "id" : 3150975,
+    "actor" : {
+      "id" : 777149,
+      "firstName" : "Fran",
+      "lastName" : "Ryan",
+      "gender" : "F"
+    },
+    "role" : ""
+  }, {
+    "id" : 2101791,
+    "actor" : {
+      "id" : 492617,
+      "firstName" : "Bruno",
+      "lastName" : "VeSota",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 1031790,
+    "actor" : {
+      "id" : 233008,
+      "firstName" : "Hank (I)",
+      "lastName" : "Jones",
+      "gender" : "M"
+    },
+    "role" : "Commencement Speaker"
+  }, {
+    "id" : 1505300,
+    "actor" : {
+      "id" : 350875,
+      "firstName" : "George",
+      "lastName" : "OHanlon",
+      "gender" : "M"
+    },
+    "role" : "Parking Attendant"
+  }, {
+    "id" : 966258,
+    "actor" : {
+      "id" : 218157,
+      "firstName" : "Arthur",
+      "lastName" : "Hunnicutt",
+      "gender" : "M"
+    },
+    "role" : "Mr. Purdham"
+  }, {
+    "id" : 1693411,
+    "actor" : {
+      "id" : 394194,
+      "firstName" : "Edwin",
+      "lastName" : "Reimers",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 695669,
+    "actor" : {
+      "id" : 156939,
+      "firstName" : "Bernard (I)",
+      "lastName" : "Fox",
+      "gender" : "M"
+    },
+    "role" : "Car Salesman"
+  }, {
+    "id" : 716755,
+    "actor" : {
+      "id" : 161535,
+      "firstName" : "Jerry",
+      "lastName" : "Fujikawa",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 997426,
+    "actor" : {
+      "id" : 225013,
+      "firstName" : "Sammy (I)",
+      "lastName" : "Jackson",
+      "gender" : "M"
+    },
+    "role" : "Frisby"
+  }, {
+    "id" : 682917,
+    "actor" : {
+      "id" : 154042,
+      "firstName" : "Joe (I)",
+      "lastName" : "Flynn",
+      "gender" : "M"
+    },
+    "role" : "Finley Hooper"
+  }, {
+    "id" : 812563,
+    "actor" : {
+      "id" : 184389,
+      "firstName" : "James (I)",
+      "lastName" : "Gregory",
+      "gender" : "M"
+    },
+    "role" : "Rutledge"
+  }, {
+    "id" : 300666,
+    "actor" : {
+      "id" : 68023,
+      "firstName" : "Frank",
+      "lastName" : "Cady",
+      "gender" : "M"
+    },
+    "role" : "Assayer"
+  }, {
+    "id" : 2183396,
+    "actor" : {
+      "id" : 510286,
+      "firstName" : "Frank",
+      "lastName" : "Wilcox",
+      "gender" : "M"
+    },
+    "role" : "Bank Manager"
+  }, {
+    "id" : 1730104,
+    "actor" : {
+      "id" : 401767,
+      "firstName" : "Tony (I)",
+      "lastName" : "Roberts",
+      "gender" : "M"
+    },
+    "role" : "Fred Hines"
+  }, {
+    "id" : 1138703,
+    "actor" : {
+      "id" : 258606,
+      "firstName" : "Jack",
+      "lastName" : "Kruschen",
+      "gender" : "M"
+    },
+    "role" : "Doctor Gottlieb"
+  }, {
+    "id" : 1030816,
+    "actor" : {
+      "id" : 232840,
+      "firstName" : "Dean (I)",
+      "lastName" : "Jones",
+      "gender" : "M"
+    },
+    "role" : "Professor Albert Dooley"
+  }, {
+    "id" : 460158,
+    "actor" : {
+      "id" : 102911,
+      "firstName" : "Howard (I)",
+      "lastName" : "Culver",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 2546466,
+    "actor" : {
+      "id" : 608164,
+      "firstName" : "Sandy",
+      "lastName" : "Duncan",
+      "gender" : "F"
+    },
+    "role" : "Katie Dooley"
+  }, {
+    "id" : 2003532,
+    "actor" : {
+      "id" : 468291,
+      "firstName" : "Vaughn (I)",
+      "lastName" : "Taylor",
+      "gender" : "M"
+    },
+    "role" : ""
+  } ],
+  "directors" : [ {
+    "id" : 52153,
+    "firstName" : "Vincent",
+    "lastName" : "McEveety",
+    "directorGenre" : {
+      "id" : 52153,
+      "directorId" : 29790,
+      "genre" : "War",
+      "prob" : 0.0625
+    }
+  } ]
+}, {
+  "id" : 7,
+  "name" : "$1,000,000 Reward, The",
+  "year" : 1920,
+  "movieGenres" : [ ],
+  "roles" : [ {
+    "id" : 1307430,
+    "actor" : {
+      "id" : 297663,
+      "firstName" : "Joe Smith",
+      "lastName" : "Marba",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 3225417,
+    "actor" : {
+      "id" : 798030,
+      "firstName" : "Leora",
+      "lastName" : "Spellman",
+      "gender" : "F"
+    },
+    "role" : ""
+  }, {
+    "id" : 1947416,
+    "actor" : {
+      "id" : 455153,
+      "firstName" : "F.W.",
+      "lastName" : "Stewart",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 418137,
+    "actor" : {
+      "id" : 93998,
+      "firstName" : "Buck",
+      "lastName" : "Connors",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 3336559,
+    "actor" : {
+      "id" : 828769,
+      "firstName" : "Lillian",
+      "lastName" : "Walker",
+      "gender" : "F"
+    },
+    "role" : ""
+  }, {
+    "id" : 1672571,
+    "actor" : {
+      "id" : 389659,
+      "firstName" : "Bernard",
+      "lastName" : "Randall",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 1211692,
+    "actor" : {
+      "id" : 275524,
+      "firstName" : "George",
+      "lastName" : "Lessey",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 33904,
+    "actor" : {
+      "id" : 8147,
+      "firstName" : "Ray (VI)",
+      "lastName" : "Allen",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 1607568,
+    "actor" : {
+      "id" : 374744,
+      "firstName" : "William",
+      "lastName" : "Pike",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 23352,
+    "actor" : {
+      "id" : 5772,
+      "firstName" : "Coit",
+      "lastName" : "Albertson",
+      "gender" : "M"
+    },
+    "role" : ""
+  }, {
+    "id" : 2724347,
+    "actor" : {
+      "id" : 657403,
+      "firstName" : "Louise",
+      "lastName" : "Hotaling",
+      "gender" : "F"
+    },
+    "role" : ""
+  }, {
+    "id" : 1402877,
+    "actor" : {
+      "id" : 319792,
+      "firstName" : "Charles (I)",
+      "lastName" : "Middleton",
+      "gender" : "M"
+    },
+    "role" : ""
+  } ],
+  "directors" : [ {
+    "id" : 46205,
+    "firstName" : "George",
+    "lastName" : "Lessey",
+    "directorGenre" : {
+      "id" : 46205,
+      "directorId" : 26397,
+      "genre" : "Drama",
+      "prob" : 1.0
+    }
+  }, {
+    "id" : 30759,
+    "firstName" : "Harry (I)",
+    "lastName" : "Grossman",
+    "directorGenre" : {
+      "id" : 30759,
+      "directorId" : 17608,
+      "genre" : "Comedy",
+      "prob" : 0.428571
+    }
+  } ]
+}, {
+  "id" : 8,
+  "name" : "$10,000 Under a Pillow",
+  "year" : 1921,
+  "movieGenres" : [ {
+    "id" : 9,
+    "movieId" : 8,
+    "genre" : "Comedy"
+  }, {
+    "id" : 8,
+    "movieId" : 8,
+    "genre" : "Animation"
+  }, {
+    "id" : 10,
+    "movieId" : 8,
+    "genre" : "Short"
+  } ],
+  "roles" : [ ],
+  "directors" : [ {
+    "id" : 55661,
+    "firstName" : "Frank",
+    "lastName" : "Moser",
+    "directorGenre" : {
+      "id" : 55661,
+      "directorId" : 31737,
+      "genre" : "Documentary",
+      "prob" : 0.0909091
+    }
+  } ]
+}, {
+  "id" : 9,
+  "name" : "$100,000",
+  "year" : 1915,
+  "movieGenres" : [ {
+    "id" : 11,
+    "movieId" : 9,
+    "genre" : "Drama"
+  } ],
+  "roles" : [ {
+    "id" : 1236343,
+    "actor" : {
+      "id" : 281619,
+      "firstName" : "Frank (I)",
+      "lastName" : "Lloyd",
+      "gender" : "M"
+    },
+    "role" : "The Bank Secretary"
+  }, {
+    "id" : 2852287,
+    "actor" : {
+      "id" : 694092,
+      "firstName" : "Helen",
+      "lastName" : "Leslie",
+      "gender" : "F"
+    },
+    "role" : ""
+  }, {
+    "id" : 2343537,
+    "actor" : {
+      "id" : 551194,
+      "firstName" : "May",
+      "lastName" : "Benson",
+      "gender" : "F"
+    },
+    "role" : ""
+  }, {
+    "id" : 2264382,
+    "actor" : {
+      "id" : 530138,
+      "firstName" : "Mildred",
+      "lastName" : "Adams",
+      "gender" : "F"
+    },
+    "role" : ""
+  } ],
+  "directors" : [ {
+    "id" : 47387,
+    "firstName" : "Frank (I)",
+    "lastName" : "Lloyd",
+    "directorGenre" : {
+      "id" : 47387,
+      "directorId" : 27067,
+      "genre" : "Documentary",
+      "prob" : 0.333333
+    }
+  } ]
+} ]
