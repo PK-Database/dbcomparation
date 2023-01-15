@@ -24,6 +24,7 @@ public class PerformDbActionController {
     }
 
     @PostMapping("/query")
+    @CrossOrigin
     public ResponseEntity<?> getResultsForQuery(@RequestParam DatabaseType databaseType, @RequestParam QueryType queryType){
         return ResponseEntity.ok().body(databaseManager.specifyDatabaseService(databaseType).executeQuery(queryType));
     }
