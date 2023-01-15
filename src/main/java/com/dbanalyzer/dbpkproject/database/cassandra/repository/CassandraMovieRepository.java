@@ -1,7 +1,6 @@
 package com.dbanalyzer.dbpkproject.database.cassandra.repository;
 
 import com.dbanalyzer.dbpkproject.database.cassandra.entity.Movie;
-import com.dbanalyzer.dbpkproject.database.cassandra.usertypes.Role;
 import org.springframework.data.cassandra.repository.AllowFiltering;
 import org.springframework.data.cassandra.repository.CassandraRepository;
 

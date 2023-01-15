@@ -33,7 +33,7 @@ public class MongoService implements DataBaseService {
     public Collection<MovieDto> executeQuery(QueryType queryType) {
         return switch (queryType) {
             case CREATE -> null;
-            case READ -> null;
+            case READ -> mongoMapper.mapToDtoList(movieRepository.findByYearBetweenAndDirectors());
             case UPDATE -> null;
             case DELETE -> delete();
             case DELETE_ALL -> deleteAll();
