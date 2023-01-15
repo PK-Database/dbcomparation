@@ -26,7 +26,6 @@ public class CassandraService implements DataBaseService {
     }
 
     public void saveMovies(List<? extends Object> movieList) {
-        movieRepository.deleteAll();
         movieRepository.saveAll((List<Movie>) movieList);
     }
 
@@ -42,6 +41,7 @@ public class CassandraService implements DataBaseService {
             case READ -> null;
             case UPDATE -> update();
             case DELETE -> delete();
+            case DELETE_ALL -> deleteAll();
         };
     }
 
@@ -77,6 +77,11 @@ public class CassandraService implements DataBaseService {
         movieRepository.deleteAllById(movies.stream().map(Movie::getId).toList());
 
         return cassandraMapper.mapToDtoList(movies);
+    }
+
+    private List<MovieDto> deleteAll() {
+        movieRepository.deleteAll();
+        return null;
     }
 
 }

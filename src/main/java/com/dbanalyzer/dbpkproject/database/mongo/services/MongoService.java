@@ -16,33 +16,37 @@ import java.util.List;
 @Service
 public class MongoService implements DataBaseService {
 
-    private final MongoMovieRepository mongoMovieRepository;
+    private final MongoMovieRepository movieRepository;
     private final MongoMapper mongoMapper;
 
     @Override
     public Collection<MovieDto> getMovies() {
-        return mongoMapper.mapToDtoList(mongoMovieRepository.findAll());
+        return mongoMapper.mapToDtoList(movieRepository.findAll());
     }
 
     @Override
     public void saveMovies(List<?> moviesList) {
-        mongoMovieRepository.deleteAll();
-        mongoMovieRepository.saveAll((List<Movie>) moviesList);
+        movieRepository.saveAll((List<Movie>) moviesList);
     }
 
     @Override
     public Collection<MovieDto> executeQuery(QueryType queryType) {
-        System.out.println("hehe mongo");
         return switch (queryType) {
             case CREATE -> null;
             case READ -> null;
             case UPDATE -> null;
             case DELETE -> delete();
+            case DELETE_ALL -> deleteAll();
         };
     }
 
     private List<MovieDto> delete() {
-        return mongoMapper.mapToDtoList(mongoMovieRepository.deleteAllByYearBetween(1910, 1950));
+        return mongoMapper.mapToDtoList(movieRepository.deleteAllByYearBetween(1910, 1950));
+    }
+
+    private List<MovieDto> deleteAll() {
+        movieRepository.deleteAll();
+        return null;
     }
 
 }

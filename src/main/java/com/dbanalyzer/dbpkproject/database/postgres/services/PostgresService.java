@@ -34,16 +34,21 @@ public class PostgresService implements DataBaseService {
             case READ -> null;
             case UPDATE -> null;
             case DELETE -> delete();
+            case DELETE_ALL -> deleteAll();
         };
     }
 
     public void saveMovies(List<? extends Object> movieList) {
-        movieRepository.deleteAll();
         movieRepository.saveAll((List<Movie>) movieList);
     }
 
     private List<MovieDto> delete() {
         return postgresMapper.mapToDtoList(movieRepository.deleteAllByYearBetween(1910, 1950));
+    }
+
+    private List<MovieDto> deleteAll() {
+        movieRepository.deleteAll();
+        return null;
     }
 
 }

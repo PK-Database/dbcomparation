@@ -27,7 +27,6 @@ public class DynamoService implements DataBaseService {
     }
 
     public void saveMovies(List<? extends Object> movieList) {
-        movieRepository.deleteAll();
         movieRepository.saveAll((List<Movie>) movieList);
     }
 
@@ -44,11 +43,17 @@ public class DynamoService implements DataBaseService {
             case READ -> null;
             case UPDATE -> null;
             case DELETE -> delete();
+            case DELETE_ALL -> deleteAll();
         };
     }
 
     private List<MovieDto> delete() {
         return dynamoMapper.mapToDtoList(movieRepository.deleteAllByYearBetween(1910, 1950));
+    }
+
+    private List<MovieDto> deleteAll() {
+        movieRepository.deleteAll();
+        return null;
     }
 
 }
