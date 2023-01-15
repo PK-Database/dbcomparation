@@ -38,11 +38,28 @@ public class CassandraService implements DataBaseService {
     public Collection<MovieDto> executeQuery(QueryType queryType) {
         return switch (queryType) {
             case CREATE -> null;
-            case READ -> null;
+            case READ -> select();
             case UPDATE -> update();
             case DELETE -> delete();
             case DELETE_ALL -> deleteAll();
         };
+    }
+
+
+
+    /*
+    * select * from public.movies as mo \n" +
+            "inner join public.movies_directors as md on mo.id = md.movie_id\n" +
+            "inner join public.directors as di on di.id = md.directors_id\n" +
+            "inner join public.directors_genres as dg on dg.id = di.id\n" +
+            "where mo.year >= 2000 and mo.year <= 2005 and dg.genre LIKE '%me
+    */
+
+
+    private List<MovieDto> select() {
+        List<Movie> movies = movieRepository.findAllByYearBetween(2000, 2005)
+                .stream().filter(movie -> movie.getDirectors().stream().filter(director -> director.getDirectorGenre().getGenre().endsWith("me")).toList().size() >= 1).toList();
+        return cassandraMapper.mapToDtoList(movies);
     }
 
     /**

@@ -21,11 +21,11 @@ public class CassandraMapper {
                 .collect(toList());
     }
 
-    public List<MovieDto> mapToDtoList(List<Movie> dtos) {
+    public List<MovieDto> mapToDtoList(List<Movie> entities) {
         JMapper<MovieDto, Movie> accidentMapper = new JMapper<>
                 (MovieDto.class, Movie.class);
 
-        return dtos.stream()
+        return entities.stream()
                 .map(accidentMapper::getDestination)
                 .collect(toList());
     }
