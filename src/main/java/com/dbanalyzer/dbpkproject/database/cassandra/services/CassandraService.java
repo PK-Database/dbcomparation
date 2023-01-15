@@ -5,14 +5,13 @@ import com.dbanalyzer.dbpkproject.csv.dto.MovieDto;
 import com.dbanalyzer.dbpkproject.csv.mapper.CassandraMapper;
 import com.dbanalyzer.dbpkproject.database.cassandra.entity.Movie;
 import com.dbanalyzer.dbpkproject.database.cassandra.repository.CassandraMovieRepository;
+import com.dbanalyzer.dbpkproject.database.cassandra.usertypes.MovieGenre;
 import com.dbanalyzer.dbpkproject.manager.DataBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.InputMismatchException;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class CassandraService implements DataBaseService {
@@ -41,17 +40,41 @@ public class CassandraService implements DataBaseService {
         return switch (queryType) {
             case CREATE -> null;
             case READ -> null;
-            case UPDATE -> null;
+            case UPDATE -> update();
             case DELETE -> delete();
         };
     }
 
+    /**
+     * Update movie genre set to 'Cartoon' where genre 'Animation' and movie year less than 2000
+    * */
+    private List<MovieDto> update() {
+        List<Movie> movies = movieRepository.findAllByYearLessThan(2000)
+                .stream()
+                .filter(movie -> movie.getMovieGenres().stream().filter(movieGenre -> movieGenre.getGenre().equals("Animation")).toList().size() >= 1)
+                .toList();
+
+        List<Movie> updated = movies.stream().map(movie -> {
+            Set<MovieGenre> genres = movie.getMovieGenres();
+            List<MovieGenre> animation = movie.getMovieGenres().stream().filter(movieGenre -> movieGenre.getGenre().equals("Animation")).toList();
+            MovieGenre genre = animation.get(0);
+            genres.remove(genre);
+            genre.setGenre("Cartoon");
+            genres.add(genre);
+
+            movie.setMovieGenres(genres);
+
+            return movie;
+        }).toList();
+
+        movieRepository.deleteAllById(movies.stream().map(Movie::getId).collect(Collectors.toList()));
+        movieRepository.saveAll(updated);
+        return cassandraMapper.mapToDtoList(updated);
+    }
+
     private List<MovieDto> delete() {
         List<Movie> movies = movieRepository.findAllByYearBetween(1910, 1950);
-        for (Movie movie:movies
-        ) {
-            movieRepository.deleteById(movie.getId());
-        }
+        movieRepository.deleteAllById(movies.stream().map(Movie::getId).toList());
 
         return cassandraMapper.mapToDtoList(movies);
     }
