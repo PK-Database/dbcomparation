@@ -11,6 +11,7 @@ import com.dbanalyzer.dbpkproject.manager.DataBaseService;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,10 +45,26 @@ public class DynamoService implements DataBaseService {
         return switch (queryType) {
             case CREATE -> null;
             case READ -> getDynamoEntities();
-            case UPDATE -> null;
+            case UPDATE -> updateQuery();
             case DELETE -> delete();
             case DELETE_ALL -> deleteAll();
         };
+    }
+
+    private Collection<MovieDto> updateQuery() {
+        Collection<Movie> movies = movieRepository.findAllByYearIsLessThan(2000);
+        Collection<Movie> moviesToUpdate = movies.stream()
+                .filter(el -> el.getMovieGenres().stream()
+                        .anyMatch(ele -> ele.getGenre().equals("Animation")))
+                .collect(Collectors.toList());
+
+        movieRepository.deleteAll(moviesToUpdate);
+
+        moviesToUpdate.forEach(el -> el.getMovieGenres().stream().filter(ele -> ele.getGenre().equals("Animation")).forEach(movieGenre -> movieGenre.setGenre("Cartoon")));
+
+        movieRepository.saveAll(moviesToUpdate);
+
+        return Collections.emptyList();
     }
 
     private List<MovieDto> delete() {

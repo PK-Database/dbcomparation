@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -33,11 +34,17 @@ public class PostgresService implements DataBaseService {
         return switch (queryType) {
             case CREATE -> null;
             case READ -> postgresMapper.mapToDtoList(movieRepository.getMoviesCreatedBetween2000and2005());
-            case UPDATE -> null;
+            case UPDATE -> updateQuery();
             case DELETE -> delete();
             case DELETE_ALL -> deleteAll();
         };
     }
+
+    private Collection<MovieDto> updateQuery() {
+        movieRepository.updateQuery();
+        return Collections.emptyList();
+    }
+
 
     public void saveMovies(List<? extends Object> movieList) {
         movieRepository.saveAll((List<Movie>) movieList);

@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -33,13 +34,23 @@ public class MongoService implements DataBaseService {
     public Collection<MovieDto> executeQuery(QueryType queryType) {
         return switch (queryType) {
             case CREATE -> null;
-            case READ -> mongoMapper.mapToDtoList(movieRepository.findByYearBetweenAndDirectors());
-            case UPDATE -> null;
+            case READ -> getMovies();
+            case UPDATE -> updateQuery();
             case DELETE -> delete();
             case DELETE_ALL -> deleteAll();
         };
     }
 
+
+    private Collection<MovieDto> updateQuery() {
+        List<Movie> result = movieRepository.findAllByLessThan2000AndGenre();
+
+        result.forEach(el -> el.getMovieGenres().stream().filter(ele -> ele.getGenre().equals("Animation")).forEach(elem -> elem.setGenre("Cartoon")));
+
+        movieRepository.saveAll(result);
+
+        return Collections.emptyList();
+    }
 
     private List<MovieDto> delete() {
         List<Movie> movies = movieRepository.findAllByRolesNotNull()

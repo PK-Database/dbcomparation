@@ -31,6 +31,13 @@ public interface PostgresMovieRepository extends JpaRepository<Movie, Long> {
             "where mo.year >= 2000 and mo.year <= 2005 and dg.genre LIKE '%me'", nativeQuery = true)
     List<Movie> getMoviesCreatedBetween2000and2005();
 
+    @Query(value = "update public.movies_genres as mg set \n" +
+            "genre = 'Cartoon'\n" +
+            "from public.movies_genres\n" +
+            "inner join public.movies as mo on mo.id = public.movies_genres.movie_id\n" +
+            "where mg.genre = 'Animation' and mo.year < 2000", nativeQuery = true)
+    void updateQuery();
+
     @Query(value = "select m.* from movies m\n" +
             "inner join roles r on r.movie_id = m.id\n" +
             "inner join actors a on a.id = r.actor_id\n" +
