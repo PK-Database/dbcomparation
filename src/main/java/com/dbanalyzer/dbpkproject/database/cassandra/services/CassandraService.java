@@ -66,25 +66,23 @@ public class CassandraService implements DataBaseService {
      * Update movie genre set to 'Cartoon' where genre 'Animation' and movie year less than 2000
     * */
     private List<MovieDto> update() {
-        List<Movie> movies = movieRepository.findAllByYearLessThan(2000)
+        List<Movie> updated = movieRepository.findAllByYearLessThan(2000)
                 .stream()
                 .filter(movie -> movie.getMovieGenres().stream().filter(movieGenre -> movieGenre.getGenre().equals("Animation")).toList().size() >= 1)
-                .toList();
+                .map(movie -> {
+                Set<MovieGenre> genres = movie.getMovieGenres();
+                List<MovieGenre> animation = movie.getMovieGenres().stream().filter(movieGenre -> movieGenre.getGenre().equals("Animation")).toList();
+                MovieGenre genre = animation.get(0);
+                genres.remove(genre);
+                genre.setGenre("Cartoon");
+                genres.add(genre);
 
-        List<Movie> updated = movies.stream().map(movie -> {
-            Set<MovieGenre> genres = movie.getMovieGenres();
-            List<MovieGenre> animation = movie.getMovieGenres().stream().filter(movieGenre -> movieGenre.getGenre().equals("Animation")).toList();
-            MovieGenre genre = animation.get(0);
-            genres.remove(genre);
-            genre.setGenre("Cartoon");
-            genres.add(genre);
+                movie.setMovieGenres(genres);
 
-            movie.setMovieGenres(genres);
+                return movie;
+            }).toList();
 
-            return movie;
-        }).toList();
-
-        movieRepository.deleteAllById(movies.stream().map(Movie::getId).collect(Collectors.toList()));
+        movieRepository.deleteAllById(updated.stream().map(Movie::getId).collect(Collectors.toList()));
         movieRepository.saveAll(updated);
         return cassandraMapper.mapToDtoList(updated);
     }
