@@ -11,4 +11,6 @@ public interface MongoMovieRepository extends MongoRepository<Movie, Long> {
 
     @Query("{'year': { $gte: 2000, $lte: 2005 }, 'directors.directorGenre.genre': 'Crime'}")
     List<Movie> findByYearBetweenAndDirectors();
+
+    List<Movie> findAllByRolesNotNull();
 }

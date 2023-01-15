@@ -88,7 +88,7 @@ public class CassandraService implements DataBaseService {
     }
 
     private List<MovieDto> delete() {
-        List<Movie> movies = movieRepository.findAllByRolesNotNull()
+        List<Movie> movies = movieRepository.findAll()
                 .stream()
                 .filter(movie -> movie.getRoles().stream().filter(role -> role.getActor().getLastName().startsWith("F")).toList().size() >= 1)
                 .toList();

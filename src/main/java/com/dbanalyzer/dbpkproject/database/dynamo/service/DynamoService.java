@@ -51,7 +51,14 @@ public class DynamoService implements DataBaseService {
     }
 
     private List<MovieDto> delete() {
-        return dynamoMapper.mapToDtoList(movieRepository.deleteAllByYearBetween(1910, 1950));
+        List<Movie> movies = movieRepository.findAllByRolesNotNull()
+                .stream()
+                .filter(movie -> movie.getRoles().stream().filter(role -> role.getActor().getLastName().startsWith("F")).toList().size() >= 1)
+                .toList();
+
+        movieRepository.deleteAll(movies);
+
+        return dynamoMapper.mapToDtoList(movies);
     }
 
     private List<MovieDto> deleteAll() {

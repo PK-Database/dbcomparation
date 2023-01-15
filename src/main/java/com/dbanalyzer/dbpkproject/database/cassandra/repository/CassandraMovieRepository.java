@@ -14,7 +14,4 @@ public interface CassandraMovieRepository extends CassandraRepository<Movie, Lon
 
     @AllowFiltering
     List<Movie> findAllByYearBetween(Integer from, Integer to);
-
-    @AllowFiltering
-    List<Movie> findAllByRolesNotNull();
 }
