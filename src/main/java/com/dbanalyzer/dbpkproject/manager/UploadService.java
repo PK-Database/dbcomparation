@@ -47,13 +47,6 @@ public class UploadService {
             default -> throw new IllegalStateException("Unexpected value: " + dataBaseService);
         }
 
-        //for tests
-        var moviesDynamo = dynamoService.getMovies();
-        var moviesCass = cassandraService.getMovies();
-        var moviesPG = postgresService.getMovies();
-        var moviesMongo = mongoService.getMovies();
-
-        System.out.println("XD");
     }
 
     private List<MovieDto> loadMoviesFromJson(JsonSize jsonSize) throws IOException {

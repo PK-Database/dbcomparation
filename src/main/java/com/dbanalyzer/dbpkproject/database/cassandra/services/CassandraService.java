@@ -9,9 +9,7 @@ import com.dbanalyzer.dbpkproject.manager.DataBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.InputMismatchException;
 import java.util.List;
 
 @Service
@@ -27,7 +25,6 @@ public class CassandraService implements DataBaseService {
     }
 
     public void saveMovies(List<? extends Object> movieList) {
-        movieRepository.deleteAll();
         movieRepository.saveAll((List<Movie>) movieList);
     }
 
@@ -43,17 +40,23 @@ public class CassandraService implements DataBaseService {
             case READ -> null;
             case UPDATE -> null;
             case DELETE -> delete();
+            case DELETE_ALL -> deleteAll();
         };
     }
 
     private List<MovieDto> delete() {
         List<Movie> movies = movieRepository.findAllByYearBetween(1910, 1950);
-        for (Movie movie:movies
+        for (Movie movie : movies
         ) {
             movieRepository.deleteById(movie.getId());
         }
 
         return cassandraMapper.mapToDtoList(movies);
+    }
+
+    private List<MovieDto> deleteAll() {
+        movieRepository.deleteAll();
+        return null;
     }
 
 }
