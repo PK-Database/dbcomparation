@@ -1,5 +1,6 @@
 package com.dbanalyzer.dbpkproject.database.cassandra.repository;
 
+import com.amazonaws.services.dynamodbv2.xspec.M;
 import com.dbanalyzer.dbpkproject.database.cassandra.entity.Movie;
 import org.springframework.data.cassandra.repository.AllowFiltering;
 import org.springframework.data.cassandra.repository.CassandraRepository;
@@ -13,4 +14,7 @@ public interface CassandraMovieRepository extends CassandraRepository<Movie, Lon
 
     @AllowFiltering
     List<Movie> findAllByYearBetween(Integer from, Integer to);
+
+    @AllowFiltering
+    List<Movie> findAllByRolesNotNull();
 }

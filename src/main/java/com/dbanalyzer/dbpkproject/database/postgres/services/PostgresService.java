@@ -8,6 +8,7 @@ import com.dbanalyzer.dbpkproject.database.postgres.repository.PostgresMovieRepo
 import com.dbanalyzer.dbpkproject.manager.DataBaseService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -43,7 +44,8 @@ public class PostgresService implements DataBaseService {
     }
 
     private List<MovieDto> delete() {
-        return postgresMapper.mapToDtoList(movieRepository.deleteAllByYearBetween(1910, 1950));
+        movieRepository.deleteAll(movieRepository.getMoviesWithFActor());
+        return new ArrayList<>();
     }
 
     private List<MovieDto> deleteAll() {

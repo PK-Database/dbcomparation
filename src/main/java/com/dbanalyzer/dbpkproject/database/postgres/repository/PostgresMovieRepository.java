@@ -30,4 +30,10 @@ public interface PostgresMovieRepository extends JpaRepository<Movie, Long> {
             "inner join public.directors_genres as dg on dg.id = di.id\n" +
             "where mo.year >= 2000 and mo.year <= 2005 and dg.genre LIKE '%me'", nativeQuery = true)
     List<Movie> getMoviesCreatedBetween2000and2005();
+
+    @Query(value = "select m.* from movies m\n" +
+            "inner join roles r on r.movie_id = m.id\n" +
+            "inner join actors a on a.id = r.actor_id\n" +
+            "where a.last_name like 'F%'", nativeQuery = true)
+    List<Movie> getMoviesWithFActor();
 }

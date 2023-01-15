@@ -25,7 +25,7 @@ public class Movie {
     @JoinColumn(name = "movie_id")
     private Set<Role> roles;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "movies_directors",
             joinColumns = @JoinColumn(name = "movie_id")

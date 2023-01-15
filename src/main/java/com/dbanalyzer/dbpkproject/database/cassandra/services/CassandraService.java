@@ -88,7 +88,11 @@ public class CassandraService implements DataBaseService {
     }
 
     private List<MovieDto> delete() {
-        List<Movie> movies = movieRepository.findAllByYearBetween(1910, 1950);
+        List<Movie> movies = movieRepository.findAllByRolesNotNull()
+                .stream()
+                .filter(movie -> movie.getRoles().stream().filter(role -> role.getActor().getLastName().startsWith("F")).toList().size() >= 1)
+                .toList();
+
         movieRepository.deleteAllById(movies.stream().map(Movie::getId).toList());
 
         return cassandraMapper.mapToDtoList(movies);
