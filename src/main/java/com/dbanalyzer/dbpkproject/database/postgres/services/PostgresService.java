@@ -31,7 +31,7 @@ public class PostgresService implements DataBaseService {
     public Collection<MovieDto> executeQuery(QueryType queryType) {
         return switch (queryType) {
             case CREATE -> null;
-            case READ -> null;
+            case READ -> postgresMapper.mapToDtoList(movieRepository.getMoviesCreatedBetween2000and2005());
             case UPDATE -> null;
             case DELETE -> delete();
             case DELETE_ALL -> deleteAll();
